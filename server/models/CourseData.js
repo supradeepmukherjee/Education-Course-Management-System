@@ -13,10 +13,6 @@ const dataSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    vidThumbnail: {
-        type: String,
-        required: true
-    },
     vidPlayer: {
         type: String,
         required: true

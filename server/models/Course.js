@@ -14,8 +14,8 @@ const courseSchema = new mongoose.Schema({
         required: true
     }],
     thumbnail: {
-        type: String,
-        required: true
+        id: String,
+        url: String
     },
     level: {
         type: String,

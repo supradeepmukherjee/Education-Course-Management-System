@@ -1,4 +1,6 @@
 import mongoose from 'mongoose'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -18,8 +20,8 @@ const userSchema = new mongoose.Schema({
         select: false
     },
     chavi: {
-        type: String,
-        required: true
+        id: String,
+        url: String
     },
     role: {
         type: String,

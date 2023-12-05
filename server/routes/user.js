@@ -1,9 +1,11 @@
 import { Router } from 'express'
-import {  } from '../controllers/user.js'
+import { login, logout, register } from '../controllers/user.js'
 import isAuthenticated from '../middlewares/auth.js'
 
 const router = Router()
 
-router.route('/logout').post(isAuthenticated, )
+router.route('/register').post(register)
+router.route('/login').post(login)
+router.route('/logout').get(isAuthenticated, logout)
 
 export default router
