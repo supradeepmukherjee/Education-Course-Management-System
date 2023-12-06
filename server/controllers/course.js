@@ -1,5 +1,8 @@
 import cloudinary from 'cloudinary'
 import { Course } from '../models/Course.js'
+import { Comment } from '../models/Comment.js'
+import { CourseData } from '../models/CourseData.js'
+import { Review } from '../models/Review.js'
 
 export const createCourse = async (req, res) => {
     try {
@@ -36,7 +39,6 @@ export const updateCourse = async (req, res) => {
 
 export const singleCourse = async (req, res) => {
     try {
-        
         const course = await Course.findById(req.params.id)
         res.status(200).json({ success: true, course })
     } catch (err) {
@@ -47,9 +49,51 @@ export const singleCourse = async (req, res) => {
 
 export const allCourses = async (req, res) => {
     try {
-        
         const courses = await Course.find()
         res.status(200).json({ success: true, courses })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
+
+export const accessCourse = async (req, res) => {
+    try {
+        const id = req.params.id
+        const bought = req.user.courses.find(course => course._id === id)
+        if (!bought) return res.status(402).json({ success: false, msg: 'Course not accessible' })
+        const course = await Course.findById(id).populate('data')
+        res.status(200).json({ success: true, course })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
+
+export const ask = async (req, res) => {
+    try {
+        const ques = await Comment.create(req.body).populate('user')
+        let courseData = await CourseData.findByIdAndUpdate(req.params.id)
+        courseData.ques.unshift(ques._id)
+        if (req.user._id === ques.user._id) {
+
+        } else {
+            // send mail telling that their question has been answered
+        }
+        await courseData.save()
+        res.status(200).json({ success: true, courseData, ques })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
+
+export const review = async (req, res) => {
+    try {
+        const bought = req.user.courses.find(course => course._id === req.params._id)
+        if (!bought) return res.status(400).json({ success: false, msg: 'Buy Course First' })
+        const review = await Review.create(req.body)
+        res.status(200).json({ success: true })
     } catch (err) {
         console.log(err);
         res.status(500).json({ success: false, msg: err.msg })
