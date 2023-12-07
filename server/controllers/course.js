@@ -72,9 +72,10 @@ export const accessCourse = async (req, res) => {
 
 export const ask = async (req, res) => {
     try {
+        req.body._id = req.user._id
         const ques = await Comment.create(req.body).populate('user')
-        let courseData = await CourseData.findByIdAndUpdate(req.params.id)
-        courseData.ques.unshift(ques._id)
+        let courseData = await CourseData.findById(req.params.id)
+        courseData.ques.unshift({ _id: ques._id })
         if (req.user._id === ques.user._id) {
 
         } else {
@@ -90,10 +91,34 @@ export const ask = async (req, res) => {
 
 export const review = async (req, res) => {
     try {
-        const bought = req.user.courses.find(course => course._id === req.params._id)
+        const id = req.params.id
+        const bought = req.user.courses.find(course => course._id === id)
         if (!bought) return res.status(400).json({ success: false, msg: 'Buy Course First' })
+        req.body._id = req.user._id
         const review = await Review.create(req.body)
-        res.status(200).json({ success: true })
+        const course = await Course.findById(id)
+        course.reviews.unshift({ _id: review._id })
+        const reviews = await Review.find()
+        let courseReviews = []
+        for (let i = 0; i < reviews.length; i++) {
+            for (let j = 0; j < course.reviews.length; j++) {
+                if (course.reviews[j] === reviews[i]) courseReviews.push(reviews[i])
+            }
+        }
+        let total
+        courseReviews.forEach(review => total += review.rating)
+        course.rating = total / courseReviews.length
+        await course.save()
+        res.status(200).json({ success: true, review })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
+export const replyReview = async (req, res) => {
+    try {
+        const course = await Course.findById(req.params.id)
+        
     } catch (err) {
         console.log(err);
         res.status(500).json({ success: false, msg: err.msg })
