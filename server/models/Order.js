@@ -6,13 +6,14 @@ const orderSchema = new mongoose.Schema({
         ref: 'EdUser',
         required: true
     },
-    courses: [{
+    course: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Course',
         required: true
-    }],
+    },
     payment: {
-        
+        type: Object,
+        // required:true
     }
 },
     { timestamps: true }

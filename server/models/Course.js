@@ -43,8 +43,18 @@ const courseSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'CourseData'
     }],
-    rating: Number,
-    learners: Number
+    rating: {
+        type: Number,
+        default: 0
+    },
+    learners: {
+        type: Number,
+        default: 0
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'EdUser'
+    }
 },
     { timestamps: true }
 )

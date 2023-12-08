@@ -7,6 +7,8 @@ import cp from 'cookie-parser'
 import dotenv from 'dotenv'
 import user from './routes/user.js'
 import course from './routes/course.js'
+import order from './routes/order.js'
+import notification from './routes/notification.js'
 const app = express()
 
 if (process.env.NODE_ENV !== 'production') dotenv.config({ path: './config/.env' })
@@ -19,6 +21,8 @@ app.use(cp())
 
 app.use('/api/user', user)
 app.use('/api/course', course)
+app.use('/api/order', order)
+app.use('/api/notification', notification)
 
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(expressStatic(join(__dirname, '../client/build')))
