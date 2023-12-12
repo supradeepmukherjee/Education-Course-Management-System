@@ -48,3 +48,26 @@ export const logout = async (req, res) => {
         res.status(500).json({ success: false, msg: err.msg })
     }
 }
+
+export const changeRole = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id)
+        user.role = req.body.role
+        await user.save()
+        res.status(200).json({ success: true, user })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
+
+export const delUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id)
+        await user
+        res.status(200).json({ success: true, user })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}

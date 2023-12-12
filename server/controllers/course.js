@@ -47,9 +47,9 @@ export const singleCourse = async (req, res) => {
     }
 }
 
-export const allCourses = async (req, res) => {
+export const purchasedCourses = async (req, res) => {
     try {
-        const courses = await Course.find()
+        const courses = await Course.find({})
         res.status(200).json({ success: true, courses })
     } catch (err) {
         console.log(err);
@@ -70,9 +70,10 @@ export const accessCourse = async (req, res) => {
     }
 }
 
-export const ask = async (req, res) => {
+export const ask = async (req, res) => { // make reply controller (as per requirement)
+    // also send notification to admin whenever ques is asked along with video name
     try {
-        req.body._id = req.user._id
+        req.body.user = req.user._id
         const ques = await Comment.create(req.body).populate('user')
         let courseData = await CourseData.findById(req.params.id)
         courseData.ques.unshift({ _id: ques._id })
@@ -115,12 +116,24 @@ export const review = async (req, res) => {
         res.status(500).json({ success: false, msg: err.msg })
     }
 }
+
 export const replyReview = async (req, res) => {
     try {
         const course = await Course.findById(req.params.id)
-        
+
     } catch (err) {
         console.log(err);
         res.status(500).json({ success: false, msg: err.msg })
     }
 }
+
+export const myCourses = async (req, res) => {
+    try {
+        const courses = await Course.find({})
+        res.status(200).json({ success: true, courses })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
+

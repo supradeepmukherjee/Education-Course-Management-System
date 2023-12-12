@@ -28,3 +28,13 @@ export const createOrder = async (req, res) => {
         res.status(500).json({ success: false, msg: err.msg })
     }
 }
+
+export const allOrders = async (req, res) => {
+    try {
+        const orders=await Order.find({})
+        res.status(200).json({ success: true, orders })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ success: false, msg: err.msg })
+    }
+}
