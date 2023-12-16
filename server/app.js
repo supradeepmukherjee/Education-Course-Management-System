@@ -10,6 +10,7 @@ import course from './routes/course.js'
 import order from './routes/order.js'
 import notification from './routes/notification.js'
 import analytics from './routes/analytics.js'
+import layout from './routes/layout.js'
 const app = express()
 
 if (process.env.NODE_ENV !== 'production') dotenv.config({ path: './config/.env' })
@@ -25,6 +26,8 @@ app.use('/api/course', course)
 app.use('/api/order', order)
 app.use('/api/notification', notification)
 app.use('/api/analytics', analytics)
+app.use('/api/analytics', analytics)
+app.use('/api/layout', layout)
 
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(expressStatic(join(__dirname, '../client/build')))
