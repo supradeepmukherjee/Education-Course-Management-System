@@ -1,0 +1,33 @@
+header {
+    width: 100%;
+    position: relative;
+}
+
+.header>div>div {
+    width: 95%;
+    margin: auto;
+    padding: 2px initial;
+    margin: auto;
+    height: 100%;
+}
+
+.header>div>div>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.header a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+@media screen and (max-width:800px) {
+    .header>div>div {
+        width: 92%;
+        height: 80px;
+    }
+}
