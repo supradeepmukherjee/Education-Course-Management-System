@@ -1,0 +1,42 @@
+.navItems {
+    display: none;
+}
+
+.active {
+    color: #dc143c;
+    font-size: 18px;
+    font-weight: 400;
+    padding: initial 6px;
+}
+
+.inactive {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    padding: initial 6px;
+}
+
+.phone {
+    margin-top: 5px;
+}
+
+.phone>div {
+    width: 100%;
+    text-align: center;
+    padding: 6px initial;
+}
+
+.phoneItem {
+    display: block !important;
+    padding: 5px 6px !important;
+}
+
+@media screen and (max-width:800px) {
+    .navItems {
+        display: flex;
+    }
+
+    .phone {
+        display: none;
+    }
+}

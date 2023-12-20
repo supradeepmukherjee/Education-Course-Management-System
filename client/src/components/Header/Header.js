@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import NavItems from '../NavItems/NavItems'
 import './Header.css'
 
 const Header = ({ open, setOpen, active, setActive }) => {
@@ -18,6 +19,12 @@ const Header = ({ open, setOpen, active, setActive }) => {
                                 {/* logo */}
                                 Skill Mastery
                             </Link>
+                        </div>
+                        <div className="">
+                            <NavItems active={active} isPhone={false} />
+                            <div className="phone">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

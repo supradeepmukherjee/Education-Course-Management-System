@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import './App.css'
 
 function App() {
