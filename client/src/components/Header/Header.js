@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavItems from '../NavItems/NavItems'
+import Modal from '../Modal'
 import './Header.css'
 
-const Header = ({ open, setOpen, active, setActive }) => {
+const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false)
     window.addEventListener('scroll', () => {
         if (window.scrollY > 80) setActive(true)
         else setActive(false)
     })
+    const closeHandler = e => {
+        if (e.target.id) setSidebarOpen(false)
+    }
     return (
         <div className='header'>
             <div className={active ? '' : ''}>
@@ -22,13 +26,36 @@ const Header = ({ open, setOpen, active, setActive }) => {
                         </div>
                         <div className="">
                             <NavItems active={active} isPhone={false} />
-                            <div className="phone">
-                                
+                            <div className="phoneSidebarToggle">
+                                {/* hamburger to setSidebarOpen(!sidebarOpen) 4200 */}
                             </div>
+                            {/* user icon to setOpen(true).*/}
                         </div>
                     </div>
                 </div>
+                {/* sidebar for phone */}
+                {
+                    sidebarOpen && (
+                        <div onClick={closeHandler} className="phoneSidebar" id='screen'>
+                            <div className="">
+                                <NavItems active={active} isPhone={true} />
+                                {/* user icon to setOpen(true) */}
+                                <br />
+                                <br />
+                                <p>
+                                    Copyright &copy; 2023 ECMS
+                                </p>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
+            {
+                open && 
+                <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} 
+                // component={} 1 03 30
+                 />
+            }
         </div>
     )
 }

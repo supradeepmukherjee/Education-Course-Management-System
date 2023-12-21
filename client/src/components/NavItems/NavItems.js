@@ -47,23 +47,21 @@ const NavItems = ({ active, isPhone }) => {
             {
                 isPhone && (
                     <div className="phone">
-                        <div className="">
-                            {items.map((item, i) => {
-                                return (
-                                    <Link to={'/'}>
-                                        <span className={
-                                            active === i
-                                                ?
-                                                'active phoneItem'// dark 37a39a
-                                                :
-                                                'inactive phoneItem'// dark fff
-                                        }>
-
-                                        </span>
-                                    </Link>
-                                )
-                            })}
-                        </div>
+                        {items.map((item, i) => {
+                            return (
+                                <Link to={'/'}>
+                                    <span className={
+                                        active === i
+                                            ?
+                                            'active phoneItem'// dark 37a39a
+                                            :
+                                            'inactive phoneItem'// dark fff
+                                    }>
+                                        {item.name}
+                                    </span>
+                                </Link>
+                            )
+                        })}
                     </div>
                 )
             }

@@ -24,14 +24,48 @@ header {
     font-weight: 500;
     color: #000;
 }
-.header>div>div>div>div:first-child{
+
+.header>div>div>div>div:first-child {
     display: flex;
     align-items: center;
+}
+
+.phoneSidebar {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    /* make bg unset when dark */
+    background-color: #00000024;
+    position: fixed;
+}
+
+.phoneSidebar>div {
+    width: 70%;
+    position: fixed;
+    z-index: 999;
+    height: 100vh;
+    background-color: #fff;
+    /* make bg dark when using dark mode */
+    top: 0;
+    right: 0;
+}
+
+.phoneSidebar>div>p {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 2px;
+    color: #000;
 }
 
 @media screen and (max-width:800px) {
     .header>div>div {
         width: 92%;
         height: 80px;
+    }
+
+    .phoneSidebarToggle {
+        display: none;
     }
 }
