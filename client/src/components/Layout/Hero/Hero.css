@@ -36,7 +36,7 @@
 .hero>div:nth-child(3)>h2 {
     color: #000000c7;
     font-size: 30px;
-    padding: 2px 3px;
+    padding: .5rem .75rem;
     width: 100%;
     font-weight: 600;
 }
@@ -130,7 +130,7 @@
     }
 
     .belowHeroInput>p {
-        padding-left: 3px;
+        padding-left: .75rem;
     }
 }
 

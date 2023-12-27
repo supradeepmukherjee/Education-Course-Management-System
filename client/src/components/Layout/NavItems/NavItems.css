@@ -2,14 +2,14 @@
     color: #dc143c;
     font-size: 18px;
     font-weight: 400;
-    padding: initial 6px;
+    padding: initial 1.5rem;
 }
 
 .inactive {
     color: #000;
     font-size: 18px;
     font-weight: 400;
-    padding: initial 6px;
+    padding: initial 1.5rem;
 }
 
 .phone {

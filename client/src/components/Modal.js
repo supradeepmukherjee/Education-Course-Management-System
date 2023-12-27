@@ -1,6 +1,6 @@
 import { Modal as MuiModal, Box } from '@mui/material'
 
-const Modal = ({ open, setOpen, active, setRoute, component }) => {
+const Modal = ({ open, setOpen, active, setRoute, component: Component }) => {
     return (
         <MuiModal open={open} onClose={() => setOpen(false)} aria-labelledby='modal-modal-title' aria-describedby='modal-modal-description'>
             <Box
@@ -16,7 +16,7 @@ const Modal = ({ open, setOpen, active, setRoute, component }) => {
                     position: 'absolute'
                 }}
             >
-                
+                <Component />
             </Box>
         </MuiModal>
     )

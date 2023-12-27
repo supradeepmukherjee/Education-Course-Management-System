@@ -1,0 +1,57 @@
+.login {
+    width: 100%;
+}
+
+.input {
+    width: 98%;
+    color: #000;
+    background-color: transparent;
+    height: 40px;
+    padding: initial .5rem;
+    margin-top: 2.5rem;
+    outline: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.password {
+    width: 100%;
+    margin-top: 1.25rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.passwordIcon {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.5rem;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 1.25rem;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .75rem 1.5rem;
+    cursor: pointer;
+    background-color: #2190ff;
+    min-height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero.js';
+import Header from './components/Layout/Header/Header';
+import Hero from './components/Layout/Hero/Hero.js';
 import './App.css'
 
 function App() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const [active, setActive] = useState(0)
   const [route, setRoute] = useState('Login')
   return (

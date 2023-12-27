@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import heroImg from '../../img/hero.png'
+import heroImg from '../../../img/hero.png'
 import './Hero.css'
 
 const Hero = () => {

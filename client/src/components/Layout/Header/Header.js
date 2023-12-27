@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import NavItems from '../NavItems/NavItems'
-import Modal from '../Modal'
+import NavItems from '../../Layout/NavItems/NavItems'
+import Modal from '../../Modal'
+import Login from '../../User/Login/Login'
 import './Header.css'
 
 const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
@@ -51,10 +52,8 @@ const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
                 }
             </div>
             {
-                open && 
-                <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} 
-                // component={} 1 03 30
-                 />
+                open &&
+                <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} component={Login} />
             }
         </div>
     )

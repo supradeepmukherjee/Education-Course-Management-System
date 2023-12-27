@@ -6,7 +6,7 @@ header {
 .header>div>div {
     width: 95%;
     margin: auto;
-    padding: 2px initial;
+    padding: .5rem initial;
     margin: auto;
     height: 100%;
 }
@@ -16,7 +16,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3px;
+    padding: .75rem;
 }
 
 .header a {
@@ -54,8 +54,8 @@ header {
 
 .phoneSidebar>div>p {
     font-size: 16px;
-    padding-left: 5px;
-    padding-right: 2px;
+    padding-left: 1.25rem;
+    padding-right: .5rem;
     color: #000;
 }
 
