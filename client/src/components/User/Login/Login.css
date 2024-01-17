@@ -55,3 +55,27 @@
     -ms-border-radius: 3rem;
     -o-border-radius: 3rem;
 }
+
+.loginAlt {
+    text-align: center;
+    padding-top: 4px;
+    font-size: 14px;
+    color: black;
+}
+
+.loginUsing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px initial;
+}
+.signUp{
+    text-align: center;
+    padding-top: 4px;
+    font-size: 14px;
+}
+.signUp>span{
+    color: #2190ff;
+    padding-left: 1px;
+    cursor: pointer;
+}

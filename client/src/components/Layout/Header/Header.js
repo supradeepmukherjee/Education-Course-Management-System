@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import NavItems from '../../Layout/NavItems/NavItems'
 import Modal from '../../Modal'
 import Login from '../../User/Login/Login'
+import SignUp from '../../User/SignUp/SignUp'
+import Verification from '../../User/Verification/Verification'
 import './Header.css'
 
 const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
@@ -53,7 +55,11 @@ const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
             </div>
             {
                 open &&
-                <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} component={Login} />
+                <>
+                    {route === 'Login' && <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} component={Login} />}
+                    {route === 'Signup' && <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} component={SignUp} />}
+                    {route === 'Verification' && <Modal open={open} setOpen={setOpen} active={active} setRoute={setRoute} component={Verification} />}
+                </>
             }
         </div>
     )

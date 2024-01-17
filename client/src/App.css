@@ -10,3 +10,44 @@ body {
   text-align: center;
   padding: 2px initial;
 }
+
+.shake {
+  animation: shake .5s ease-in-out;
+  -webkit-animation: shake .5s ease-in-out;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@keyframes shake {
+  0% {
+    translate: 0;
+  }
+
+  20% {
+    translate: -2px;
+  }
+
+  40% {
+    translate: 2px;
+  }
+
+  60% {
+    translate: -2px;
+  }
+
+  80% {
+    translate: 2px;
+  }
+
+  100% {
+    translate: 0;
+  }
+}
