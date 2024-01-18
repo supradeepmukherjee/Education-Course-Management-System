@@ -3,7 +3,7 @@ import cloudinary from 'cloudinary'
 
 export const register = async (req, res) => {
     try {
-        const { name, email, password, chavi } = req.body
+        const { name, email, password, chavi } = req.body.user
         let user = await User.findOne({ email })
         if (user) return res.status(400).json({ success: false, msg: 'User already exists' })
         const myCloud = await cloudinary.v2.uploader.upload(chavi, {
