@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Layout/Header/Header';
-import Hero from './components/Layout/Hero/Hero.js';
+import Hero from './components/Layout/Hero/Hero'
+import Profile from './components/User/Profile/Profile.js'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Header open={open} setOpen={setOpen} active={active} setActive={setActive} setRoute={setRoute} route={route} />
       <Routes>
         <Route exact path='/' element={<Hero />} />
+        <Route exact path='/profile' element={<Profile />} />
       </Routes >
     </Router >
   );

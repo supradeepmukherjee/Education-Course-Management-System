@@ -30,9 +30,9 @@ const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
                         <div className="">
                             <NavItems active={active} isPhone={false} />
                             <div className="phoneSidebarToggle">
-                                {/* hamburger to setSidebarOpen(!sidebarOpen) 4200 */}
+                                {/* hamburger only when <800px to setSidebarOpen(!sidebarOpen) 4200 */}
                             </div>
-                            {/* user icon to setOpen(true).*/}
+                            {/* user photo only when logged in else icon to setOpen(true) hidden initially but block if>=800px. and href='/profile'*/}
                         </div>
                     </div>
                 </div>

@@ -33,10 +33,10 @@ const SignUp = ({ setRoute }) => {
     const handleSubmit = async e => {
         e.preventDefault()
         if (user.name.length < 5) {
-            return alert('error', setAlertType, 'Name must be of mimimum 5 characters', setAlertMsg, setAlertVisibility, dispatch)
+            return alert('error', setAlertType, 'Name must be of minimum 5 characters', setAlertMsg, setAlertVisibility, dispatch)
         }
         if (user.password.length < 8) {
-            return alert('error', setAlertType, 'Password must be of mimimum 8 characters', setAlertMsg, setAlertVisibility, dispatch)
+            return alert('error', setAlertType, 'Password must be of minimum 8 characters', setAlertMsg, setAlertVisibility, dispatch)
         }
         dispatch(registerUser(user))
         alert('info', setAlertType, 'Please Wait', setAlertMsg, setAlertVisibility, dispatch)
