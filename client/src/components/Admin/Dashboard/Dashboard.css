@@ -1,0 +1,14 @@
+.dashboard {
+    display: flex;
+    height: 200vh;
+}
+
+.dashboardSidebar {
+    width: 20%;
+}
+
+@media screen and (max-width:1500px) {
+    .dashboardSidebar {
+        width: 16%;
+    }
+}

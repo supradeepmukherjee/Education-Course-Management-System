@@ -1,0 +1,104 @@
+.profileInfo1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profileInfo1Container {
+    position: relative;
+}
+
+.profileInfoImg {
+    width: 120px;
+    height: 120px;
+    border: 3px;
+    cursor: pointer;
+    border-color: #37a39a;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+.profileInfo1Container>input::file-selector-button {
+    display: none;
+}
+
+.profileInfoIcon {
+    width: 30px;
+    height: 30px;
+    background-color: #0f172a;
+    position: absolute;
+    bottom: 2px;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+.profileInfo2 {
+    width: 100%;
+    padding-left: 1.5rem;
+}
+
+.profileInfo2Container {
+    margin: auto;
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.profileInfo2Container>div:first-child {
+    width: 100%;
+}
+
+.profileInfo2Container>div:nth-child(2) {
+    width: 100%;
+    padding-top: 0.5rem;
+}
+
+.profileInfo2Container>div>label {
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.profileInfo2Container>div>input {
+    width: 95%;
+    margin-bottom: 1rem;
+}
+.updateNameBtn{
+    width: 100%;
+    height: 40px;
+    border-color: #37a39a;
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@media screen and (min-width:800px) {
+    .profileInfo2 {
+        padding-left: 2.5rem;
+    }
+
+    .profileInfo2Container {
+        width: 50%;
+    }
+    .profileInfo2Container>div:first-child>input {
+        margin-bottom: 0;
+    }
+    .updateNameBtn{
+        width: 250px;
+    }
+}

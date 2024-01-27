@@ -1,0 +1,54 @@
+.sidebarProfile {
+    width: 100%;
+}
+
+.sidebarProfileTop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px 3px;
+    cursor: pointer;
+}
+
+.sidebarProfileChavi {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 99%;
+    -webkit-border-radius: 99%;
+    -moz-border-radius: 99%;
+    -ms-border-radius: 99%;
+    -o-border-radius: 99%;
+}
+
+.sidebarProfileHeading {
+    padding-left: 2px;
+    display: none;
+}
+
+.sidebarProfileMain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px 3px;
+    cursor: pointer;
+}
+
+.sidebarProfileActive {
+    background-color: #1e293b;
+}
+
+.sidebarProfileInactive {
+    opacity: 0;
+}
+
+@media screen and (min-width:800px) {
+    .sidebarProfileChavi {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sidebarProfileHeading {
+        display: block;
+    }
+}

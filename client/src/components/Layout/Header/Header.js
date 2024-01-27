@@ -32,7 +32,7 @@ const Header = ({ open, setOpen, active, setActive, route, setRoute }) => {
                             <div className="phoneSidebarToggle">
                                 {/* hamburger only when <800px to setSidebarOpen(!sidebarOpen) 4200 */}
                             </div>
-                            {/* user photo only when logged in else icon to setOpen(true) hidden initially but block if>=800px. and href='/profile'*/}
+                            {/* user photo only when logged in else icon to setOpen(true) hidden initially but block if>=800px. and href='/profile' and (if activeOfHeader=5 then set border 2px solid color)*/}
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Layout/Header/Header';
 import Hero from './components/Layout/Hero/Hero'
 import Profile from './components/User/Profile/Profile.js'
+import Dashboard from './components/Admin/Dashboard/Dashboard.js'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />
+        <Route exact path='/admin' element={<Dashboard />} />
       </Routes >
     </Router >
   );
