@@ -1,5 +1,21 @@
-.misc{
+.dashboardSection{
     font-size: 18px;
     font-weight: 400;
     margin: 15px 0 5px 20px;
+}
+.expand{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.sidebarHeading{
+    font-size: 25px;
+}
+.sidebarChavi{
+    cursor: pointer;
+    border: 3px solid #5b6fe6;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
