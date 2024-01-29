@@ -10,9 +10,10 @@ function App() {
   const [open, setOpen] = useState(true)
   const [active, setActive] = useState(0)
   const [route, setRoute] = useState('Login')
+  const [dashboard, setDashboard] = useState(false)
   return (
     <Router>
-      <Header open={open} setOpen={setOpen} active={active} setActive={setActive} setRoute={setRoute} route={route} />
+      {!dashboard && <Header open={open} setOpen={setOpen} active={active} setActive={setActive} setRoute={setRoute} route={route} />}
       <Routes>
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />

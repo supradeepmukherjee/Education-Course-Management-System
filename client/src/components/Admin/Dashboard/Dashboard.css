@@ -7,6 +7,10 @@
     width: 20%;
 }
 
+.dashboardMain{
+    width: 85%;
+}
+
 @media screen and (max-width:1500px) {
     .dashboardSidebar {
         width: 16%;

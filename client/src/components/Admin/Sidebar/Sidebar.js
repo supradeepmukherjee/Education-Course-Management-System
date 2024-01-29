@@ -7,8 +7,18 @@ import Expand from '@mui/icons-material/ArrowForward';
 import Collapse from '@mui/icons-material/KeyboardBackspace';
 import Dashboard from '@mui/icons-material/Dashboard';
 import Users from '@mui/icons-material/Groups';
-import ListItem from './ListItem.js'
 import Receipt from '@mui/icons-material/Receipt';
+import Create from '@mui/icons-material/AddBox';
+import LiveCourses from '@mui/icons-material/OndemandVideo';
+import WebIcon from '@mui/icons-material/Web';
+import FAQ from '@mui/icons-material/Help';
+import Category from '@mui/icons-material/Category';
+import Team from '@mui/icons-material/Diversity1';
+import CourseAnalytics from '@mui/icons-material/Analytics';
+import OrderAnalytics from '@mui/icons-material/Insights';
+import UserAnalytics from '@mui/icons-material/AccountTree';
+import Settings from '@mui/icons-material/Settings';
+import ListItem from './ListItem.js'
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 
@@ -78,7 +88,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography variant='h5' className='dashboardSection'>
+            <Typography variant='h5' className='dashboardSubmenu'>
               {!collapsed && 'Data'}
             </Typography>
             <ListItem
@@ -95,17 +105,99 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography variant='h5' className='dashboardSection'>
+            <Typography variant='h5' className='dashboardSubmenu'>
               {!collapsed && 'Content'}
             </Typography>
+            <ListItem
+              text={'Create Course'}
+              to={'/admin/create'}
+              icon={<Create />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <ListItem
+              text={'Live Courses'}
+              to={'/admin/courses'}
+              icon={<LiveCourses />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography variant='h5' className='dashboardSubmenu'>
+              {!collapsed && 'Customization'}
+            </Typography>
+            <ListItem
+              text={'Hero'}
+              to={'/admin/hero'}
+              icon={<WebIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <ListItem
+              text={'FAQ'}
+              to={'/admin/faq'}
+              icon={<FAQ />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <ListItem
+              text={'Categories'}
+              to={'/admin/categories'}
+              icon={<Category />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography variant='h5' className='dashboardSubmenu'>
+              {!collapsed && 'Controllers'}
+            </Typography>
+            <ListItem
+              text={'Manage Team'}
+              to={'/admin/team'}
+              icon={<Team />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography variant='h5' className='dashboardSubmenu'>
+              {!collapsed && 'Analytics'}
+            </Typography>
+            <ListItem
+              text={'Courses Analytics'}
+              to={'/admin/course-analytics'}
+              icon={<CourseAnalytics />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <ListItem
+              text={'Orders Analytics'}
+              to={'/admin/order-analytics'}
+              icon={<OrderAnalytics />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <ListItem
+              text={'Users Analytics'}
+              to={'/admin/user-analytics'}
+              icon={<UserAnalytics />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography variant='h5' className='dashboardSubmenu'>
+              {!collapsed && 'Extras'}
+            </Typography>
+            <ListItem
+              text={'Settings'}
+              to={'/admin/settings'}
+              icon={<Settings />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography variant='h5' className='dashboardSubmenu'>
+              {!collapsed && 'Miscellaneous'}
+            </Typography>
+            <ListItem to={'/admin/settings'} text='Settings' icon={<Settings />} selected={selected} setSelected={setSelected} />
+            <div onClick={logoutHandler} className="">
+              <ListItem to={'/'} text='Logout' icon={<Logout />} selected={selected} setSelected={setSelected} />
+            </div>
           </Box>
-          <Typography variant='h5' className='dashboardSection'>
-            {!collapsed && 'Miscellaneous'}
-          </Typography>
-          <ListItem to={'/admin/settings'} text='Settings' icon={<Settings />} selected={selected} setSelected={setSelected} />
-          <div onClick={logoutHandler} className="">
-            <ListItem to={'/'} text='Logout' icon={<Logout />} selected={selected} setSelected={setSelected} />
-          </div>
         </Menu>
       </Sidebar>
     </Box>
