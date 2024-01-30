@@ -4,6 +4,7 @@ import Header from './components/Layout/Header/Header';
 import Hero from './components/Layout/Hero/Hero'
 import Profile from './components/User/Profile/Profile.js'
 import Dashboard from './components/Admin/Dashboard/Dashboard.js'
+import CreateCourse from './components/Admin/CreateCourse/CreateCourse.js'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/admin' element={<Dashboard />} />
+        <Route exact path='/admin/course' element={<CreateCourse />} />
       </Routes >
     </Router >
   );

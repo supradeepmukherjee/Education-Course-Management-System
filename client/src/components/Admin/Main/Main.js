@@ -1,4 +1,4 @@
-import Header from './Header/Header.js'
+import Header from '../Header/Header.js'
 import './Main.css'
 
 const Main = () => {

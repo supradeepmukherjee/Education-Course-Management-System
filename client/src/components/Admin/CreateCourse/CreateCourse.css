@@ -1,0 +1,24 @@
+.create {
+    display: flex;
+}
+
+.createSidebar {
+    width: 20%;
+}
+.createMain{
+    width: 85%;
+}
+.createMainContainer{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+.createMainContainer>div{
+    width: 80%;
+}
+
+@media screen and (min-width:1500px) {
+    .createSidebar {
+        width: 16%;
+    }
+}
