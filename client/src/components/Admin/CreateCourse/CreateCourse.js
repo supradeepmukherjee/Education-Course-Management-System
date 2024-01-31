@@ -1,6 +1,7 @@
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
-import CourseInfo from '../CourseInfo/CourseInfo.js'
+import CourseInfo from '../CourseInfo/CourseInfo'
+import CourseOptions from '../CourseOptions/CourseOptions.js'
 import './CreateCourse.css'
 
 const CreateCourse = () => {
@@ -38,10 +39,13 @@ const CreateCourse = () => {
                 <div className="createMainContainer">
                     <div className="">
                         {
-                            active===0&&(
-                                <CourseInfo/>
+                            active === 0 && (
+                                <CourseInfo info={info} setInfo={setInfo} active={active} setActive={setActive} />
                             )
                         }
+                    </div>
+                    <div className="">
+                        <CourseOptions active={active} setActive={setActive} />
                     </div>
                 </div>
             </div>

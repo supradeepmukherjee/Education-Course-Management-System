@@ -1,0 +1,10 @@
+.courseInfo {
+    width: 80%;
+    margin: auto;
+    margin-top: 6rem;
+}
+
+.courseInfo>label {
+    display: block;
+    padding-bottom: 0.5rem;
+}

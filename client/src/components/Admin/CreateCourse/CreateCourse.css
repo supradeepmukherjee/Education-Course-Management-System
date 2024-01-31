@@ -13,8 +13,17 @@
     min-height: 100vh;
     display: flex;
 }
-.createMainContainer>div{
+.createMainContainer>div:first-child{
     width: 80%;
+}
+.createMainContainer>div:last-child{
+    width: 20%;
+    margin-top: 100px;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    top: 4.5rem;
+    right: 0;
 }
 
 @media screen and (min-width:1500px) {
