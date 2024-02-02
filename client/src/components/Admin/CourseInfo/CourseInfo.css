@@ -4,7 +4,89 @@
     margin-top: 6rem;
 }
 
-.courseInfo>label {
+.courseInfo label {
     display: block;
     padding-bottom: 0.5rem;
+}
+
+.courseDesc {
+    height: min-content !important;
+    padding: 0.5rem initial;
+}
+
+.courseInfo>form>div:nth-child(3),
+.courseInfo>form>div:nth-child(5) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.courseInfo>form>div:nth-child(3)>div:first-child,
+.courseInfo>form>div:nth-child(5)>div:first-child {
+    width: 45%;
+}
+
+.courseInfo>form>div:nth-child(3)>div:last-child,
+.courseInfo>form>div:nth-child(5)>div:last-child {
+    width: 50%;
+}
+
+.courseInfoImgContainer {
+    width: 100%;
+}
+
+.courseInfoImgContainer>img {
+    display: none;
+}
+
+.courseInfoImg {
+    width: 100%;
+    min-height: 10vh;
+    border: #00000026;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.courseInfoThumbnail {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.courseInfoSubmitContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.courseInfoSubmitContainer>input {
+    width: 100%;
+    height: 40px;
+    background-color: #37a39a;
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+}
+.courseInfoBenefits{
+    width: 80%;
+    margin: auto;
+    margin-top: 6rem;
+    display: block;
+}
+.courseInfoBenefits label{
+    font-size: 20px;
+}
+
+@media screen and (min-width:800px) {
+    .courseInfoSubmitContainer>input {
+        width: 180px;
+    }
 }

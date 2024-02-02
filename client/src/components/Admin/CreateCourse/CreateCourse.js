@@ -1,7 +1,8 @@
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
 import CourseInfo from '../CourseInfo/CourseInfo'
-import CourseOptions from '../CourseOptions/CourseOptions.js'
+import CourseOptions from '../CourseOptions/CourseOptions'
+import CourseData from '../CourseData/CourseData.js'
 import './CreateCourse.css'
 
 const CreateCourse = () => {
@@ -10,13 +11,11 @@ const CreateCourse = () => {
         name: '',
         desc: '',
         price: 1,
-        discount: '',
+        discount: 0,
         tags: [],
         level: '',
         demoUrl: '',
         thumbnail: '',
-        benefits: [],
-        prerequisites: []
     })
     const [data, setData] = useState({
         title: '',
@@ -29,6 +28,8 @@ const CreateCourse = () => {
         vidPlayer: '',
         suggestion: ''
     })
+    const [benefits, setBenefits] = useState([])
+    const [prerequisites, setPrerequisites] = useState([])
     return (
         <div className='create'>
             <div className="createSidebar">
@@ -40,7 +41,12 @@ const CreateCourse = () => {
                     <div className="">
                         {
                             active === 0 && (
-                                <CourseInfo info={info} setInfo={setInfo} active={active} setActive={setActive} />
+                                <CourseInfo info={info} setInfo={setInfo} active={active} setActive={setActive} benefits={benefits} setBenefits={setBenefits} prerequisites={prerequisites} setPrerequisites={setPrerequisites} />
+                            )
+                        }
+                        {
+                            active === 1 && (
+                                <CourseData data={data} setData={setData} active={active} setActive={setActive} />
                             )
                         }
                     </div>
