@@ -2,7 +2,7 @@ import Done from '@mui/icons-material/CheckCircle';
 import './CourseOptions.css'
 
 const CourseOptions = ({ active, setActive }) => {
-    const options = ['Information', 'Options', 'Content', 'Preview']
+    const options = ['Information', 'Content', 'Preview']
     return (
         <>
             {options.map((option, i) => {

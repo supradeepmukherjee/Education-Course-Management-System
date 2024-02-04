@@ -1,0 +1,18 @@
+.courseData{
+    width: 80%;
+    margin: auto;
+    margin-top: 6rem;
+    padding: 0.75rem;
+}
+.courseDataContainer{
+    width: 100%;
+    background-color: #cdc8c817;
+    padding: 1rem;
+}
+.courseDataContainer>div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 initial;
+}

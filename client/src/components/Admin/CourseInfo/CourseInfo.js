@@ -2,7 +2,8 @@ import { useState } from 'react'
 import Add from '@mui/icons-material/AddCircle';
 import './CourseInfo.css'
 
-const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits,prerequisites,setPrerequisites }) => {
+const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits, prerequisites, setPrerequisites }) => {
+  51500
   const [uploaded, setUploaded] = useState(false)
   const changeHandler = async e => {
     setInfo({ ...info, [e.target.name]: e.target.value })
@@ -13,7 +14,12 @@ const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits,pr
   const benefitsHandler = (i, val) => {
     const updatedBenefits = [...benefits]
     updatedBenefits[i] = val
-    setBenefits(benefits)
+    setBenefits(updatedBenefits)
+  }
+  const prerequisitesHandler = (i, val) => {
+    const updatedPrerequisites = [...prerequisites]
+    updatedPrerequisites[i] = val
+    setPrerequisites(updatedPrerequisites)
   }
   const submitHandler = async e => {
     e.preventDefault()
@@ -91,7 +97,7 @@ const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits,pr
         </div>
         <div className="courseInfoBenefits">
           <div className="">
-            <label htmlFor="email">
+            <label>
               How will you benefit after completing this course?
             </label>
             <br />
@@ -99,7 +105,18 @@ const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits,pr
             <Add sx={{ margin: '10px 0', cursor: 'pointer', width: '30px' }} onClick={() => setBenefits([...benefits, ''])} />
           </div>
         </div>
+        <div className="courseInfoBenefits">
+          <div className="">
+            <label>
+              What are the prerequisites before starting this course?
+            </label>
+            <br />
+            {prerequisites.map((prerequisite, i) => <input type='text' key={i} name='Placeholder' placeholder='Basic knowledge of computer' className='input' value={prerequisite} style={{ margin: '.5rem 0' }} onChange={() => prerequisitesHandler(i, e.target.value)} />)}
+            <Add sx={{ margin: '10px 0', cursor: 'pointer', width: '30px' }} onClick={() => setPrerequisites([...prerequisites, ''])} />
+          </div>
+        </div>
         <br />
+        51600
         <div className="courseInfoSubmitContainer">
           <input type="submit" value='Next' />
         </div>
