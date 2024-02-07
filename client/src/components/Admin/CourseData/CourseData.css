@@ -1,18 +1,63 @@
-.courseData{
+.courseData {
     width: 80%;
     margin: auto;
     margin-top: 6rem;
     padding: 0.75rem;
 }
-.courseDataContainer{
+
+.courseDataContainer {
     width: 100%;
     background-color: #cdc8c817;
     padding: 1rem;
 }
-.courseDataContainer>div{
+
+.courseDataContainer>div {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     margin: 0 initial;
+}
+
+.courseDataContainer>div>div {
+    display: flex;
+    align-items: center;
+}
+
+.delIcon {
+    font-size: 20px;
+    margin-right: 0.5rem;
+}
+
+.courseData label {
+    display: block;
+    padding-bottom: 0.75rem;
+}
+
+.sectionInput {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.courseDataInput {
+    font-size: 20px;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+}
+
+.videoDesc {
+    height: min-content !important;
+    padding: .5rem 0;
+}
+.links{
+    display: block;
+    margin-bottom: 0.75rem;
+}
+.links>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
