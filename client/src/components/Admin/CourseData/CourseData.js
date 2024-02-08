@@ -1,6 +1,8 @@
 import Delete from '@mui/icons-material/Delete'
 import Down from '@mui/icons-material/ArrowDropDown'
-import Edit from '@mui/icons-material/Edit';
+import Edit from '@mui/icons-material/Edit'
+import AddLink from '@mui/icons-material/AddLink'
+import Add from '@mui/icons-material/AddCircle'
 import './CourseData.css'
 
 const CourseData = ({ data, setData, active, setActive }) => {
@@ -18,6 +20,47 @@ const CourseData = ({ data, setData, active, setActive }) => {
         if (name === 'url') updatedData[i].vidUrl = val
         if (name === 'desc') updatedData[i].desc = val
         setData(updatedData)
+    }
+    const removeLinkHandler = (i, linkIndex) => {
+        const updatedData = [...data]
+        updatedData[i].links.splice(linkIndex, 1)
+        setData(updatedData)
+    }
+    const linkTitleInputHandler = (i, linkIndex) => {
+        const updatedData = [...data]
+        updatedData[i].links[linkIndex].url = e.target.value
+        setData(updatedData)
+    }
+    const linkUrlInputHandler = (i, linkIndex) => {
+        const updatedData = [...data]
+        updatedData[i].links[linkIndex].url = e.target.value
+        setData(updatedData)
+    }
+    const addLinkHandler = i => {
+        const updatedData = [...data]
+        updatedData[i].links.push({ title: '', url: '' })
+        setData(updatedData)
+    }
+    const addContentHandler = item => {
+        let newVidSection = ''
+        if (data.length > 0) {
+            const lastVidSection = data[data.length - 1].vidSection
+            if (lastVidSection) newVidSection = lastVidSection
+        }
+        const newContent = {
+            title: '',
+            desc: '',
+            vidUrl: '',
+            vidSection: newVidSection,
+            links: [{
+                title: '',
+                url: ''
+            }]
+        }
+        setData([...data, newContent])
+    }
+    const addSection=()=>{
+        
     }
     const submitHandler = async e => {
         e.preventDefault()
@@ -94,33 +137,51 @@ const CourseData = ({ data, setData, active, setActive }) => {
                                                     Video Description
                                                 </label>
                                                 <textarea rows={8} cols={30} className='input videoDesc' value={item.vidUrl} onChange={() => inputHandler('desc', e.target.value)} placeholder='Video Description' />
-                                                <br /><br /><br />
+                                                <br />
                                             </div>
                                             {
-                                                item.links.map((link, i) => {
+                                                item.links.map((link, index) => {
                                                     return (
                                                         <div className='links'>
                                                             <div>
                                                                 <label htmlFor="">
-                                                                    Link {i + 1}
+                                                                    Link {index + 1}
                                                                 </label>
                                                                 <Delete
                                                                     className='delIcon'
-                                                                    style={{ cursor: i === 0 ? 'no-drop' : 'pointer' }}
-                                                                    onClick={}
+                                                                    style={{ cursor: index === 0 ? 'no-drop' : 'pointer' }}
+                                                                    onClick={() => index === 0 ? null : removeLinkHandler(i, index)}
                                                                 />
                                                             </div>
+                                                            <input type="text" className='input' value={link.title} onChange={() => linkTitleInputHandler(i, index)} placeholder='Relevant Link' />
+                                                            <input type="url" className='input' style={{ marginTop: '1.5 rem' }} value={link.url} onChange={() => linkUrlInputHandler(i, index)} placeholder='http://linkurl.xyz' />
                                                         </div>
                                                     )
                                                 })
                                             }
+                                            <br />
+                                            <div className="addLink">
+                                                <p onClick={() => addLinkHandler(i)}>
+                                                    <AddLink style={{ marginRight: '.5rem' }} /> Add Link
+                                                </p>
+                                            </div>
                                         </>
                                     )
                                 }
+                                <br />
+                                {i === data.length - 1 && (
+                                    <p className='addContent' onClick={() => addContentHandler(item)}>
+                                        <Add /> Add new Content
+                                    </p>
+                                )}
                             </div>
                         </>
                     )
                 })}
+                <br />
+                <div className="addSection" onClick={addSection}>
+
+                </div>
             </form>
         </div>
     )
