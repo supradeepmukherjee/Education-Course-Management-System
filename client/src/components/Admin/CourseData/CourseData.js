@@ -42,6 +42,7 @@ const CourseData = ({ data, setData, active, setActive }) => {
         setData(updatedData)
     }
     const addContentHandler = item => {
+        if (item.title === '' || item.desc === '' || item.vidUrl === '' || item.links[0].title === '' || item.links[0].url == '') { /* show error */ }
         let newVidSection = ''
         if (data.length > 0) {
             const lastVidSection = data[data.length - 1].vidSection
@@ -59,8 +60,29 @@ const CourseData = ({ data, setData, active, setActive }) => {
         }
         setData([...data, newContent])
     }
-    const addSection=()=>{
-        
+    const addSection = () => {
+        if (data[data.length - 1].title === '' || data[data.length - 1].desc === '' || data[data.length - 1].vidUrl === '' || data[data.length - 1].links[0].title === '' || data[data.length - 1].links[0].url === '') { /* show error */ }
+        else {
+            setSection(section + 1)
+            const newContent = {
+                title: '',
+                desc: '',
+                vidUrl: '',
+                vidSection: `Section ${section}`,
+                links: [{
+                    title: '',
+                    url: ''
+                }]
+            }
+            setData([...data, newContent])
+        }
+    }
+    const handleOptions = () => {
+        if (data[data.length - 1].title === '' || data[data.length - 1].desc === '' || data[data.length - 1].vidUrl === '' || data[data.length - 1].links[0].title === '' || data[data.length - 1].links[0].url === '') { /* show error */ }
+        else {
+            setActive(active + 1)
+            submitHandler()
+        }
     }
     const submitHandler = async e => {
         e.preventDefault()
@@ -90,17 +112,13 @@ const CourseData = ({ data, setData, active, setActive }) => {
                                         </>
                                     )
                                 }
-                                <div className="">
+                                <div className="itemTitle">
                                     {
-                                        collapsed[i] ? (
-                                            <>
-                                                {item.title ? (
-                                                    <p>
-                                                        {i + 1}, {item.title}
-                                                    </p>
-                                                ) : <></>}
-                                            </>
-                                        ) : <></>
+                                        collapsed[i] && item.title && (
+                                            <p>
+                                                {i + 1}, {item.title}
+                                            </p>
+                                        )
                                     }
                                     {/* button for collapsed video content */}
                                     <div className="">
@@ -180,9 +198,19 @@ const CourseData = ({ data, setData, active, setActive }) => {
                 })}
                 <br />
                 <div className="addSection" onClick={addSection}>
-
+                    <Add /> Add new Section
                 </div>
             </form>
+            <br />
+            <div className="courseDataBtnContainer">
+                <div className="courseDataBtn" onClick={() => setActive(active - 1)}>
+                    Prev
+                </div>
+                <div className="courseDataBtn" onClick={handleOptions}>
+                    Next
+                </div>
+            </div>
+            <br /><br /><br />
         </div>
     )
 }

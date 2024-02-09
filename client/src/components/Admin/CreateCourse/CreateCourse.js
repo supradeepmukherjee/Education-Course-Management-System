@@ -2,7 +2,8 @@ import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
 import CourseInfo from '../CourseInfo/CourseInfo'
 import CourseOptions from '../CourseOptions/CourseOptions'
-import CourseData from '../CourseData/CourseData.js'
+import CourseData from '../CourseData/CourseData'
+import CoursePreview from '../CoursePreview/CoursePreview.js'
 import './CreateCourse.css'
 
 const CreateCourse = () => {
@@ -30,6 +31,12 @@ const CreateCourse = () => {
     })
     const [benefits, setBenefits] = useState([])
     const [prerequisites, setPrerequisites] = useState([])
+    const readyData={
+
+    }
+    const submitHandler=async e=>{
+        
+    }
     return (
         <div className='create'>
             <div className="createSidebar">
@@ -47,6 +54,11 @@ const CreateCourse = () => {
                         {
                             active === 1 && (
                                 <CourseData data={data} setData={setData} active={active} setActive={setActive} />
+                            )
+                        }
+                        {
+                            active === 2 && (
+                                <CoursePreview readyData={readyData} submitHandler={submitHandler} active={active} setActive={setActive} />
                             )
                         }
                     </div>
