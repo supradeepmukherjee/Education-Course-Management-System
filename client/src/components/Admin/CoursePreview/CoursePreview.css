@@ -10,9 +10,51 @@
     position: relative;
 }
 
-.coursePreview>div>div {
+.coursePreview>div>div:first-child {
     width: 100%;
     margin-top: 2.5rem;
+}
+
+.coursePreviewContainer {
+    display: flex;
+    align-items: center;
+}
+
+.coursePreviewContainer>h1 {
+    padding-top: 1.25rem;
+    font-size: 25px;
+}
+
+.coursePreviewContainer>h5 {
+    padding-left: 0.75rem;
+    font-size: 20px;
+    margin-top: 0.5rem;
+    opacity: .8;
+    text-decoration-line: line-through;
+    -moz-text-decoration-line: line-through;
+}
+
+.coursePreviewContainer>h4 {
+    padding-left: 1.25rem;
+    padding-top: 1rem;
+    font-size: 22px;
+}
+.coursePreviewBtn{
+    width: 180px!important;
+    margin: .75rem initial;
+    background-color: #dc143c;
+    cursor: not-allowed;
+}
+.coursePreviewFinal{
+    width: 60%;
+    margin-left: 0.75rem;
+    margin-top: 0!important;
+}
+.coursePreviewApply{
+    width: 120px!important;
+    margin: .75rem initial;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width:800px) {}
