@@ -5,12 +5,12 @@
     margin-bottom: 1.25rem;
 }
 
-.coursePreview>div {
+.coursePreviewOuter {
     width: 100%;
     position: relative;
 }
 
-.coursePreview>div>div:first-child {
+.coursePreviewOuter>div:first-child {
     width: 100%;
     margin-top: 2.5rem;
 }
@@ -39,22 +39,103 @@
     padding-top: 1rem;
     font-size: 22px;
 }
-.coursePreviewBtn{
-    width: 180px!important;
+
+.coursePreviewBtn {
+    width: 180px !important;
     margin: .75rem initial;
     background-color: #dc143c;
     cursor: not-allowed;
 }
-.coursePreviewFinal{
-    width: 60%;
+
+.coursePreviewFinal {
     margin-left: 0.75rem;
-    margin-top: 0!important;
+    margin-top: 0 !important;
 }
-.coursePreviewApply{
-    width: 120px!important;
+
+.coursePreviewApply {
+    width: 120px !important;
     margin: .75rem initial;
     margin-left: 1rem;
     cursor: pointer;
 }
 
-@media screen and (min-width:800px) {}
+.coursePreview p {
+    padding-bottom: .25rem;
+}
+
+.coursePreview p:last-child {
+    padding-bottom: 0.75rem;
+}
+
+.coursePreviewOuter2 {
+    width: 100%;
+}
+
+.coursePreviewOuter2>div {
+    width: 100%;
+}
+
+.coursePreviewOuter2 h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.coursePreviewOuter2>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+}
+
+.coursePreviewOuter>div>div>div {
+    display: flex;
+    align-items: center;
+}
+
+.coursePreviewBenefits {
+    width: 100%;
+    display: flex;
+    padding: .5rem initial;
+}
+
+.coursePreviewBenefits>div {
+    width: 15px;
+    margin-right: 0.25rem;
+}
+
+.coursePreviewBenefits p {
+    padding-left: .5rem;
+}
+.coursePreviewDesc{
+    font-size: 18px;
+    margin-top: 20px;
+    /* white-space: pre-line; */
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width:800px) {
+    .coursePreview p {
+        padding-bottom: 0.25rem;
+    }
+
+    .coursePreviewOuter2>div {
+        padding-right: 1.25rem;
+    }
+
+    .coursePreviewBenefits {
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .coursePreviewFinal {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width:1500px) {
+    .coursePreviewFinal {
+        width: 50%;
+    }
+}

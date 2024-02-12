@@ -58,7 +58,7 @@ const CreateCourse = () => {
                         }
                         {
                             active === 2 && (
-                                <CoursePreview readyData={readyData} submitHandler={submitHandler} active={active} setActive={setActive} />
+                                <CoursePreview benefits={benefits} prerequisites={prerequisites} readyData={readyData} submitHandler={submitHandler} active={active} setActive={setActive} />
                             )
                         }
                     </div>
