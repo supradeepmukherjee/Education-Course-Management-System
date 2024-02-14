@@ -7,8 +7,8 @@ const Hero = () => {
     const [input, setInput] = useState('')
     return (
         <div className='hero'>
-            <div className=""></div>
-            <div className="">
+            <div></div>
+            <div>
                 <img src={heroImg} className='heroImg' alt="" />
             </div>
             <div className="">

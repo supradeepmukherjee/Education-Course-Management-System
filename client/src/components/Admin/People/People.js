@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 const People = ({ team = false }) => {
     const columns = [
@@ -60,7 +61,7 @@ const People = ({ team = false }) => {
                 <Sidebar />
             </div>
             <div className="dashboardMain">
-                <Main />
+                <Header />
                 <div className="allCourses">
                     <Box m='20px'>
                         <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>

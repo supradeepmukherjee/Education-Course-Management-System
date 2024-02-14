@@ -5,18 +5,22 @@
 .createSidebar {
     width: 20%;
 }
-.createMain{
+
+.createMain {
     width: 85%;
 }
-.createMainContainer{
+
+.createMainContainer {
     width: 100%;
     min-height: 100vh;
     display: flex;
 }
-.createMainContainer>div:first-child{
+
+.createMainContainer>div:first-child {
     width: 80%;
 }
-.createMainContainer>div:last-child{
+
+.createMainContainer>div:last-child {
     width: 20%;
     margin-top: 100px;
     height: 100vh;

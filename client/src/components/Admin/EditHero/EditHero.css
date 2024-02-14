@@ -1,0 +1,43 @@
+.editHeroLabel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+}
+
+.editHeroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.editHeroTitle {
+    resize: none;
+    font-size: 30px;
+    padding: initial .75rem;
+    width: 100%;
+}
+
+.editHeroSubtitle{
+    
+}
+
+@media screen and (min-width:1000px) {
+    .editHeroContainer {
+        width: 60%;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .editHeroTitle {
+        font-size: 60px;
+    }
+}
+
+@media screen and (min-width:1500px) {
+    .editHeroTitle {
+        font-size: 70px;
+    }
+}

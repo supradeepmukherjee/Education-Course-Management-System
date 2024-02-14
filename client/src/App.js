@@ -6,7 +6,9 @@ import Profile from './components/User/Profile/Profile'
 import Dashboard from './components/Admin/Dashboard/Dashboard'
 import CreateCourse from './components/Admin/CreateCourse/CreateCourse'
 import AllCourses from './components/Admin/AllCourses/AllCourses'
-import People from './components/Admin/People/People.js'
+import People from './components/Admin/People/People'
+import EditCourse from './components/Admin/EditCourse/EditCourse'
+import EditHero from './components/Admin/EditHero/EditHero.js'
 import './App.css'
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route exact path='/admin/all-courses' element={<AllCourses />} />
         <Route exact path='/admin/users' element={<People />} />
         <Route exact path='/admin/team' element={<People team={true} />} />
+        <Route exact path='/admin/edit' element={<EditCourse />} />
+        <Route exact path='/admin/customise/hero' element={<EditHero />} />
       </Routes >
     </Router >
   );

@@ -1,5 +1,5 @@
 import Sidebar from '../Sidebar/Sidebar.js'
-import Main from '../Main/Main.js'
+import Header from '../Header/Header.js'
 import './Dashboard.css'
 
 const Dashboard = () => {
@@ -9,7 +9,7 @@ const Dashboard = () => {
         <Sidebar />
       </div>
       <div className="dashboardMain">
-        <Main />
+        <Header />
       </div>
     </div>
   )
