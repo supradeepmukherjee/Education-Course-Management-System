@@ -9,6 +9,9 @@ const EditHero = () => {
     const imgHandler = () => {
 
     }
+    const editHandler=()=>{
+
+    }
     return (
         <div className='dashboard'>
             <div className="dashboardSidebar">
@@ -28,7 +31,24 @@ const EditHero = () => {
                     <div className="editHeroContainer">
                         <textarea rows='4' value={title} onChange={e => setTitle(e.target.value)} placeholder='Title' className='editHeroTitle'></textarea>
                         <br />
-                        <textarea  value={subtitle} onChange={e => setSubtitle(e.target.value)} placeholder='Subtitle' className='editHeroSubtitle'></textarea>
+                        <textarea value={subtitle} onChange={e => setSubtitle(e.target.value)} placeholder='Subtitle' className='editHeroSubtitle'></textarea>
+                        <br /><br /><br />
+                        <div
+                            className={`submitBtn editHeroBtnDiv ${origTitle !== title || origSubtitle !== subtitle || img.url !== banner ? 'change' : 'no-change'}`}
+                            onClick={
+                                origTitle !== title
+                                    ||
+                                    origSubtitle !== subtitle
+                                    ||
+                                    img.url !== banner
+                                    ?
+                                    editHandler
+                                    :
+                                    () => null
+                            }
+                        >
+                            Update
+                        </div>
                     </div>
                 </div>
             </div>

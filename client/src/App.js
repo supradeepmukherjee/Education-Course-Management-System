@@ -8,7 +8,8 @@ import CreateCourse from './components/Admin/CreateCourse/CreateCourse'
 import AllCourses from './components/Admin/AllCourses/AllCourses'
 import People from './components/Admin/People/People'
 import EditCourse from './components/Admin/EditCourse/EditCourse'
-import EditHero from './components/Admin/EditHero/EditHero.js'
+import EditHero from './components/Admin/EditHero/EditHero'
+import EditFaq from './components/Admin/EditFaq/EditFaq.js'
 import './App.css'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/admin/team' element={<People team={true} />} />
         <Route exact path='/admin/edit' element={<EditCourse />} />
         <Route exact path='/admin/customise/hero' element={<EditHero />} />
+        <Route exact path='/admin/customise/faq' element={<EditFaq />} />
       </Routes >
     </Router >
   );

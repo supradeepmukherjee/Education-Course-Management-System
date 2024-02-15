@@ -1,0 +1,68 @@
+.editFaq {
+    width: 90%;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.editFaq>div {
+    margin-top: 3rem;
+}
+
+dl>* {
+    margin-top: 2rem;
+}
+
+dl>div {
+    padding-top: 1.5rem;
+}
+
+dt {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+dt>button {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+}
+
+dt>button:focus {
+    outline: none;
+}
+
+dl span {
+    margin-left: 1.5rem;
+    /* flex-shrink: 0; */
+}
+
+.faqBtn {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+dd {
+    margin-top: 0.5rem;
+    padding-right: 3rem;
+}
+
+.editFaqBtnDiv {
+    width: 100px !important;
+    height: 40px !important;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+}
+
+@media screen and (min-width:800px) {
+    .editFaq {
+        width: 80%;
+    }
+}
