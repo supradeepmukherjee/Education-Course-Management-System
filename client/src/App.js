@@ -10,6 +10,7 @@ import People from './components/Admin/People/People'
 import EditCourse from './components/Admin/EditCourse/EditCourse'
 import EditHero from './components/Admin/EditHero/EditHero'
 import EditFaq from './components/Admin/EditFaq/EditFaq.js'
+import EditCategories from './components/Admin/EditCategories/EditCategories.js'
 import './App.css'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route exact path='/admin/edit' element={<EditCourse />} />
         <Route exact path='/admin/customise/hero' element={<EditHero />} />
         <Route exact path='/admin/customise/faq' element={<EditFaq />} />
+        <Route exact path='/admin/customise/categories' element={<EditCategories />} />
       </Routes >
     </Router >
   );

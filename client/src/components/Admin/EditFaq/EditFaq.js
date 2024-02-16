@@ -28,7 +28,7 @@ const EditFaq = () => {
     const changed = (origFaq, faqs) => origFaq !== faqs
     const notEmpty = faqs => faqs.some(q => q.ques !== '' && q.ans !== '')
     const submitHandler = () => {
-
+        84730
     }
     return (
         <div className='dashboard'>

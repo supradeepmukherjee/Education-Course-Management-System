@@ -1,0 +1,20 @@
+.editCategories{
+    margin-top: 120px;
+    text-align: center;
+}
+.editCategoriesContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.editCategoriesContainer>input{
+    width: unset!important;
+    border: none!important;
+    font-size: 20px!important;
+}
+.editCategoriesContainer2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
