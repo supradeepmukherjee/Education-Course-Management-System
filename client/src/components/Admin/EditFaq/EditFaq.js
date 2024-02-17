@@ -20,15 +20,18 @@ const EditFaq = () => {
         }))
     }
     const newFaq = () => {
+        if (faqs[faqs.length - 1].ques === '' || faqs[faqs.length - 1].ans === '') {
+            //error
+        }
         setFaqs([...faqs, {
             ques: '',
             ans: ''
         }])
     }
     const changed = (origFaq, faqs) => origFaq !== faqs
-    const notEmpty = faqs => faqs.some(q => q.ques !== '' && q.ans !== '')
+    const notEmpty = faqs => !(faqs.some(q => q.ques === '' || q.ans === ''))
     const submitHandler = () => {
-        84730
+        
     }
     return (
         <div className='dashboard'>

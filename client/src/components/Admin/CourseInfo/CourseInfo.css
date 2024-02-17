@@ -15,6 +15,7 @@
 }
 
 .courseInfo>form>div:nth-child(3),
+.courseInfo>form>div:nth-child(4),
 .courseInfo>form>div:nth-child(5) {
     width: 100%;
     display: flex;
@@ -22,11 +23,13 @@
 }
 
 .courseInfo>form>div:nth-child(3)>div:first-child,
+.courseInfo>form>div:nth-child(4)>div:first-child,
 .courseInfo>form>div:nth-child(5)>div:first-child {
     width: 45%;
 }
 
 .courseInfo>form>div:nth-child(3)>div:last-child,
+.courseInfo>form>div:nth-child(4)>div:last-child,
 .courseInfo>form>div:nth-child(5)>div:last-child {
     width: 50%;
 }
@@ -75,13 +78,15 @@
     -ms-border-radius: .25rem;
     -o-border-radius: .25rem;
 }
-.courseInfoBenefits{
+
+.courseInfoBenefits {
     width: 80%;
     margin: auto;
     margin-top: 6rem;
     display: block;
 }
-.courseInfoBenefits label{
+
+.courseInfoBenefits label {
     font-size: 20px;
 }
 

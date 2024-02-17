@@ -34,6 +34,10 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true,
     }],
+    categories: [{
+        type: String,
+        required: true
+    }],
     prerequisites: [String],
     reviews: [{
         type: mongoose.Schema.Types.ObjectId,

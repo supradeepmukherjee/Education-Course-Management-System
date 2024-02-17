@@ -14,6 +14,7 @@ const CreateCourse = () => {
         price: 1,
         discount: 0,
         tags: [],
+        categories: [],
         level: '',
         demoUrl: '',
         thumbnail: '',
@@ -23,6 +24,7 @@ const CreateCourse = () => {
         desc: '',
         vidUrl: '',
         vidSection: '',
+        vidDuration: 0,
         links: [
 
         ],
@@ -31,11 +33,11 @@ const CreateCourse = () => {
     })
     const [benefits, setBenefits] = useState([])
     const [prerequisites, setPrerequisites] = useState([])
-    const readyData={
+    const readyData = {
 
     }
-    const submitHandler=async e=>{
-        
+    const submitHandler = async e => {
+
     }
     return (
         <div className='create'>

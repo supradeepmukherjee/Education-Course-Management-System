@@ -8,7 +8,15 @@ const EditCategories = () => {
         setCategories(categories.map(c => c._id === id ? [...c, val] : c))
     }
     const newCategoryHandler = () => {
-        // first check if any field is empty
+        if (categories[categories.length] - 1 === '') {
+            // error
+        }
+        setCategories([...categories, ''])
+    }
+    const changed = (origCtg, categories) => origCtg !== categories
+    const notEmpty = categories => !(categories.some(faq => faq === ''))
+    const submitHandler = async () => {
+
     }
     return (
         <div className='dashboard'>
@@ -33,6 +41,12 @@ const EditCategories = () => {
                     })}
                     <div className="editCategoriesContainer2">
                         <Add onClick={newCategoryHandler} />
+                    </div>
+                    <div
+                        className={`submitBtn editFaqBtnDiv ${changed(origCategories, categories) && notEmpty(categories) ? 'change' : 'no-change'}`}
+                        onClick={changed(origCategories, categories) && notEmpty(categories) ? submitHandler : () => null}
+                    >
+
                     </div>
                 </div>
             </div>

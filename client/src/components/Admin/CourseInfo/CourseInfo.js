@@ -3,7 +3,6 @@ import Add from '@mui/icons-material/AddCircle';
 import './CourseInfo.css'
 
 const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits, prerequisites, setPrerequisites }) => {
-  51500
   const [uploaded, setUploaded] = useState(false)
   const changeHandler = async e => {
     setInfo({ ...info, [e.target.name]: e.target.value })
@@ -58,10 +57,18 @@ const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits, p
         </div>
         <br />
         <div className="">
-          <label htmlFor="">
-            Tags
-          </label>
-          {/* do like the one in grp or can separate according to commas & then add to array */}
+          <div className="">
+            <label>
+              Tags
+            </label>
+            {/* do like the one in grp or can separate according to commas & then add to array */}
+          </div>
+          <div className="">
+            <label>
+              Categories
+            </label>
+            {/* do like the one in grp or can separate according to commas & then add to array */}
+          </div>
         </div>
         <br />
         <div className="">
