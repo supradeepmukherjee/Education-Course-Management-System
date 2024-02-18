@@ -1,0 +1,27 @@
+.courseAnalytics {
+    height: 100vh;
+    color: #43b113;
+}
+
+.courseAnalyticsContainer {
+    margin-top: 50px;
+}
+
+.courseAnalyticsContainer h1 {
+    padding: initial 1.25rem;
+    text-align: left !important;
+}
+
+.courseAnalyticsContainer p {
+    display: block;
+    padding: 1rem;
+    padding: initial 1.25rem;
+}
+
+.courseAnalyticsContainer2 {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

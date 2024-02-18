@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Box, IconButton, Typography } from '@mui/material'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Logout from "@mui/icons-material/ExitToApp"
-import Settings from '@mui/icons-material/Settings';
 import Expand from '@mui/icons-material/ArrowForward';
 import Collapse from '@mui/icons-material/KeyboardBackspace';
 import Dashboard from '@mui/icons-material/Dashboard';
@@ -17,7 +16,6 @@ import Team from '@mui/icons-material/Diversity1';
 import CourseAnalytics from '@mui/icons-material/Analytics';
 import OrderAnalytics from '@mui/icons-material/Insights';
 import UserAnalytics from '@mui/icons-material/AccountTree';
-import Settings from '@mui/icons-material/Settings';
 import ListItem from './ListItem.js'
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
@@ -183,17 +181,9 @@ const Sidebar = () => {
             <Typography variant='h5' className='dashboardSubmenu'>
               {!collapsed && 'Extras'}
             </Typography>
-            <ListItem
-              text={'Settings'}
-              to={'/admin/settings'}
-              icon={<Settings />}
-              selected={selected}
-              setSelected={setSelected}
-            />
             <Typography variant='h5' className='dashboardSubmenu'>
               {!collapsed && 'Miscellaneous'}
             </Typography>
-            <ListItem to={'/admin/settings'} text='Settings' icon={<Settings />} selected={selected} setSelected={setSelected} />
             <div onClick={logoutHandler} className="">
               <ListItem to={'/'} text='Logout' icon={<Logout />} selected={selected} setSelected={setSelected} />
             </div>

@@ -14,7 +14,7 @@ const CreateCourse = () => {
         price: 1,
         discount: 0,
         tags: [],
-        categories: [],
+        category: '',
         level: '',
         demoUrl: '',
         thumbnail: '',

@@ -9,8 +9,11 @@ import AllCourses from './components/Admin/AllCourses/AllCourses'
 import People from './components/Admin/People/People'
 import EditCourse from './components/Admin/EditCourse/EditCourse'
 import EditHero from './components/Admin/EditHero/EditHero'
-import EditFaq from './components/Admin/EditFaq/EditFaq.js'
-import EditCategories from './components/Admin/EditCategories/EditCategories.js'
+import EditFaq from './components/Admin/EditFaq/EditFaq'
+import EditCategories from './components/Admin/EditCategories/EditCategories'
+import CourseAnalytics from './components/Admin/Analytics/Course'
+import OrderAnalytics from './components/Admin/Analytics/Order'
+import UserAnalytics from './components/Admin/Analytics/User.js'
 import './App.css'
 
 function App() {
@@ -33,6 +36,9 @@ function App() {
         <Route exact path='/admin/customise/hero' element={<EditHero />} />
         <Route exact path='/admin/customise/faq' element={<EditFaq />} />
         <Route exact path='/admin/customise/categories' element={<EditCategories />} />
+        <Route exact path='/admin/analytics-courses' element={<CourseAnalytics />} />
+        <Route exact path='/admin/analytics-orders' element={<OrderAnalytics />} />
+        <Route exact path='/admin/analytics-users' element={<UserAnalytics />} />
       </Routes >
     </Router >
   );

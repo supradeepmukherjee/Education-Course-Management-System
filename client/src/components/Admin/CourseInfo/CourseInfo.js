@@ -4,6 +4,7 @@ import './CourseInfo.css'
 
 const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits, prerequisites, setPrerequisites }) => {
   const [uploaded, setUploaded] = useState(false)
+  const [categories, setCategories] = useState([])
   const changeHandler = async e => {
     setInfo({ ...info, [e.target.name]: e.target.value })
   }
@@ -67,7 +68,18 @@ const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits, p
             <label>
               Categories
             </label>
-            {/* do like the one in grp or can separate according to commas & then add to array */}
+            <select name="" id="" className='input' value={info.category} onChange={e => setInfo({ ...info, category: e.target.value })}>
+              <option value="">
+                Select Category
+              </option>
+              {categories.map((category, i) => {
+                return (
+                  <option value={i} key={i}>
+                    {category}
+                  </option>
+                )
+              })}
+            </select>
           </div>
         </div>
         <br />
@@ -123,7 +135,7 @@ const CourseInfo = ({ info, setInfo, active, setActive, benefits, setBenefits, p
           </div>
         </div>
         <br />
-        51600
+        
         <div className="courseInfoSubmitContainer">
           <input type="submit" value='Next' />
         </div>

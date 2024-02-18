@@ -19,6 +19,7 @@ const CourseData = ({ data, setData, active, setActive }) => {
         if (name === 'title') updatedData[i].title = val
         if (name === 'url') updatedData[i].vidUrl = val
         if (name === 'desc') updatedData[i].desc = val
+        if (name === 'duration') updatedData[i].vidDuration = val
         setData(updatedData)
     }
     const removeLinkHandler = (i, linkIndex) => {
@@ -149,6 +150,13 @@ const CourseData = ({ data, setData, active, setActive }) => {
                                                     Video URL
                                                 </label>
                                                 <input type="text" className='input' value={item.vidUrl} onChange={() => inputHandler('url', e.target.value)} placeholder='Video URL' />
+                                            </div>
+                                            <div style={{ marginBottom: '.75rem' }}>
+                                                <label>
+                                                    {/* may completely remove this in future */}
+                                                    Video Duration(in minutes)
+                                                </label>
+                                                <input type="number" className='input' value={item.vidDuration} onChange={() => inputHandler('duration', e.target.value)} placeholder='33' />
                                             </div>
                                             <div style={{ marginBottom: '.75rem' }}>
                                                 <label>
