@@ -1,0 +1,47 @@
+.userAnalytics {
+    margin-top: 50px;
+}
+
+.userAnalytics_db {
+    box-shadow: 0 1px 2px 0 #0000000d;
+    padding-bottom: 1.25rem;
+    border-radius: .125rem;
+    -webkit-border-radius: .125rem;
+    -moz-border-radius: .125rem;
+    -ms-border-radius: .125rem;
+    -o-border-radius: .125rem;
+}
+
+.userAnalyticsContainer {
+    margin-left: 2rem !important;
+    margin-bottom: 1.25rem;
+}
+
+.userAnalyticsh1 {
+    padding: initial 1.25rem;
+    text-align: left !important;
+}
+
+.userAnalyticsh1_db {
+    font-size: 20px !important;
+}
+
+.userAnalytics p {
+    display: block;
+    padding: 0 1.25rem 1rem 1.25rem;
+}
+
+.userAnalyticsContainer2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userAnalyticsContainer2_db {
+    height: 30vh;
+}
+
+.userAnalyticsContainer2_ndb {
+    height: 100vh;
+}

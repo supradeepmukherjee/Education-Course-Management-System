@@ -39,6 +39,7 @@ function App() {
         <Route exact path='/admin/analytics-courses' element={<CourseAnalytics />} />
         <Route exact path='/admin/analytics-orders' element={<OrderAnalytics />} />
         <Route exact path='/admin/analytics-users' element={<UserAnalytics />} />
+        {/* 92830 */}
       </Routes >
     </Router >
   );

@@ -1,4 +1,3 @@
-import { } from 'react'
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
 import { Bar, BarChart, Label, LabelList, ResponsiveContainer, XAxis, YAxis } from "recharts"
