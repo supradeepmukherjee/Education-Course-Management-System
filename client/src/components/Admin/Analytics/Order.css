@@ -1,0 +1,47 @@
+.orderAnalytics {
+    height: 100vh;
+}
+
+.orderAnalytics_db {
+    height: 30vh;
+}
+
+.orderAnalyticsContainer_db {
+    margin-top: 0;
+    padding-left: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.orderAnalyticsContainer {
+    margin-top: 50px;
+}
+
+.orderAnalyticsh1 {
+    padding: initial 1.25rem;
+    text-align: left;
+}
+
+.orderAnalyticsh1_db {
+    font-size: 20px !important;
+}
+
+.orderAnalyticsh1+p {
+    display: block;
+    padding: initial 1.25rem;
+    padding-bottom: 1rem;
+}
+
+.orderAnalyticsContainer2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orderAnalyticsContainer2_db {
+    height: 90%;
+}
+
+.orderAnalyticsContainer2_ndb {
+    height: 100%;
+}

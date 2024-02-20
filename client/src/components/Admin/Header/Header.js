@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import Notifications from '@mui/icons-material/Notifications';
 import './Header.css'
 
-const Header = () => {
-  const [open, setOpen] = useState(false)
+const Header = ({ open, setOpen }) => {
   return (
     <div className='dashboardHeader'>
       <div className="dashboardHeaderContainer" onClick={() => setOpen(!open)}>
