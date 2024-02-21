@@ -29,7 +29,8 @@
     padding-top: 80px;
     padding-right: 2rem;
 }
-.dashboardContainer>div>div:nth-child(2)>div{
+
+.dashboardContainer>div>div:nth-child(2)>div {
     width: 100%;
     box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
     border-radius: .125rem;
@@ -37,6 +38,29 @@
     -moz-border-radius: .125rem;
     -ms-border-radius: .125rem;
     -o-border-radius: .125rem;
+}
+
+.dashboardContainer>div>div:nth-child(2)>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+}
+
+.dashboardContainer>div>div:nth-child(2)>div>div>div:first-child>h5:first-child {
+    padding-top: 0.5rem;
+    font-size: 20px;
+}
+
+.dashboardContainer>div>div:nth-child(2)>div>div>div:first-child>h5:last-child {
+    padding: 0.5rem initial;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.dashboardContainer>div>div:nth-child(2)>div>div>div:last-child>h5 {
+    text-align: center;
+    padding-top: 1rem;
 }
 
 @media screen and (max-width:1500px) {
