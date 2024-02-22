@@ -16,21 +16,21 @@
     min-height: 100vh;
 }
 
-.dashboardContainer>div {
+.dashboardContainerGrid1 {
     display: grid;
     grid-template-columns: 75% 25%;
 }
 
-.dashboardContainer>div>div:first-child {
+.dashboardContainerGrid1>div:first-child {
     padding: 2rem;
 }
 
-.dashboardContainer>div>div:nth-child(2) {
+.dashboardContainerGrid1>div:nth-child(2) {
     padding-top: 80px;
     padding-right: 2rem;
 }
 
-.dashboardContainer>div>div:nth-child(2)>div {
+.dashboardContainerGrid1>div:nth-child(2)>div {
     width: 100%;
     box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
     border-radius: .125rem;
@@ -40,27 +40,48 @@
     -o-border-radius: .125rem;
 }
 
-.dashboardContainer>div>div:nth-child(2)>div>div {
+.dashboardContainerGrid1>div:nth-child(2)>div>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem;
 }
 
-.dashboardContainer>div>div:nth-child(2)>div>div>div:first-child>h5:first-child {
+.dashboardContainerGrid1>div:nth-child(2)>div>div>div:first-child>h5:first-child {
     padding-top: 0.5rem;
     font-size: 20px;
 }
 
-.dashboardContainer>div>div:nth-child(2)>div>div>div:first-child>h5:last-child {
+.dashboardContainerGrid1>div:nth-child(2)>div>div>div:first-child>h5:last-child {
     padding: 0.5rem initial;
     font-size: 20px;
     font-weight: 400;
 }
 
-.dashboardContainer>div>div:nth-child(2)>div>div>div:last-child>h5 {
+.dashboardContainerGrid1>div:nth-child(2)>div>div>div:last-child>h5 {
     text-align: center;
     padding-top: 1rem;
+}
+
+.dashboardContainerGrid2 {
+    display: grid;
+    grid-template-columns: 65%, 35%;
+    margin-top: -20px;
+}
+
+.dashboardContainerGrid2>div:first-child {
+    width: 95%;
+    margin-top: 30px;
+    height: 40vh;
+    margin: auto;
+    box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+}
+
+.dashboardContainerGrid2>div:last-child>h5 {
+    color: #f2f0f0;
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 0.75rem;
 }
 
 @media screen and (max-width:1500px) {

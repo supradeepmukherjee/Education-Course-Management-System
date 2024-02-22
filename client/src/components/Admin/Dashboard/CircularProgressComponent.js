@@ -8,7 +8,7 @@ const CircularProgressComponent = ({ open, value }) => {
                 value={value}
                 size={45}
                 color={value > 99 ? 'info' : 'error'}
-                thickness={45}
+                thickness={4}
                 style={{ zIndex: open ? -1 : 1 }}
             />
             <Box
@@ -22,8 +22,7 @@ const CircularProgressComponent = ({ open, value }) => {
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}
-            >
-            </Box>
+            ></Box>
         </Box>
     )
 }
