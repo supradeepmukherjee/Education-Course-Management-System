@@ -1,0 +1,40 @@
+.courses {
+    width: 90%;
+    margin: auto;
+}
+
+.courses>h1 {
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 700;
+    letter-spacing: -.025em;
+}
+.coursesGrid{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); 
+}
+
+@media screen and (min-width:640px) {
+    .courses>h1 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .courses {
+        width: 80%;
+    }
+
+    .courses>h1 {
+        line-height: 60px !important;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .courses>h1 {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+}

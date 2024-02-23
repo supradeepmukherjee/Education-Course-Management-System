@@ -14,6 +14,7 @@ import EditCategories from './components/Admin/EditCategories/EditCategories'
 import CourseAnalytics from './components/Admin/Analytics/Course'
 import OrderAnalytics from './components/Admin/Analytics/Order'
 import UserAnalytics from './components/Admin/Analytics/User.js'
+import Courses from './components/Courses/Courses.js'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />
+        <Route exact path='/courses' element={<Courses />} />
         <Route exact path='/admin' element={<Dashboard />} />
         <Route exact path='/admin/course' element={<CreateCourse />} />
         <Route exact path='/admin/all-courses' element={<AllCourses />} />

@@ -47,7 +47,7 @@ export const singleCourse = async (req, res) => {
     }
 }
 
-export const purchasedCourses = async (req, res) => {
+export const allCourses = async (req, res) => {
     try {
         const courses = await Course.find({})
         res.status(200).json({ success: true, courses })
@@ -117,7 +117,7 @@ export const review = async (req, res) => {
     }
 }
 
-export const replyReview = async (req, res) => {
+export const replyReview = async (req, res) => {//
     try {
         const course = await Course.findById(req.params.id)
 
@@ -127,7 +127,7 @@ export const replyReview = async (req, res) => {
     }
 }
 
-export const myCourses = async (req, res) => {
+export const myCourses = async (req, res) => {//
     try {
         const courses = await Course.find({})
         res.status(200).json({ success: true, courses })
