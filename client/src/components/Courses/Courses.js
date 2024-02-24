@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CourseCard from './CourseCard/CourseCard.js'
 import './Courses.css'
 
 const Courses = () => {
@@ -16,7 +17,7 @@ const Courses = () => {
       <br />
       <br />
       <div className="coursesGrid">
-        
+        {courses.map(course => <CourseCard key={course._id} course={course} />)}
       </div>
     </div>
   )

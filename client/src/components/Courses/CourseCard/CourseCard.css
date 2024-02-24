@@ -1,0 +1,52 @@
+.courseCard {
+    width: 100%;
+    min-height: 35vh;
+    backdrop-filter: blur(8px);
+    border: 1px solid #00000015;
+    padding: 0.75rem;
+    box-shadow: 0 1px 2px 0 #0000000d;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+.courseCard>img {
+    width: 500px;
+    height: 300px;
+    object-fit: contain;
+    width: 100%;
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+}
+
+.courseCard>h1 {
+    font-size: 16px;
+}
+
+.courseCard>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+}
+.courseCardPrice{
+    padding-left: 0.75rem;
+    font-size: 14px;
+    margin-top: -5px;
+    text-decoration: line-through;
+    opacity: .8;
+}
+.courseCardLectures{
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.75rem;
+}
+.courseCardLectures>h5{
+    padding-left: 0.5rem;
+}
