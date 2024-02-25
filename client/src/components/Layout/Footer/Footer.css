@@ -1,0 +1,80 @@
+.footer {
+    border: 1px solid #0000000e;
+    /* border: 1px solid #ffffff1e; */
+}
+
+.footer>div {
+    width: 90%;
+    margin: initial auto;
+    padding: initial .5rem;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.footerContainer>h3,
+.footerContainer>ul {
+    margin-top: 0.75rem;
+}
+
+.footerContainer>h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footerContainer li {
+    margin-top: 1rem;
+}
+
+.footerContainer a {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.footerContact h3 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+}
+
+.footerContact p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.footer>div>p {
+    text-align: center;
+}
+
+@media screen and (min-width:640px) {
+    .footer>div {
+        padding: initial 1.5rem;
+    }
+
+    .footerGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width:768px) {
+    .footerGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width:800px) {
+    .footer>div {
+        /* width: 100%; */
+        max-width: 85%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .footer>div {
+        padding: initial 2rem;
+    }
+}

@@ -3,6 +3,7 @@ import ReviewCard from './ReviewCard/ReviewCard.js'
 import './Reviews.css'
 
 const Reviews = () => {
+    // will have to put this under hero,courses in the same order ;-)
     const reviews = [
         {
             name: 'Human Being',

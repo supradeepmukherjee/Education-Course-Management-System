@@ -33,7 +33,16 @@ dt>button:focus {
     outline: none;
 }
 
-dl span {
+dt>button>span {
+    font-weight: 500;
+}
+
+dt>button>span:nth-child(2) {
+    margin-left: 1.5rem;
+    /* flex-shrink: 0; */
+}
+
+dd>span {
     margin-left: 1.5rem;
     /* flex-shrink: 0; */
 }
@@ -46,6 +55,11 @@ dl span {
 dd {
     margin-top: 0.5rem;
     padding-right: 3rem;
+}
+
+dd>p {
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 .editFaqBtnDiv {
@@ -64,5 +78,9 @@ dd {
 @media screen and (min-width:800px) {
     .editFaq {
         width: 80%;
+    }
+
+    .editFaq>h1 {
+        font-size: 40px;
     }
 }

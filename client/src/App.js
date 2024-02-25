@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './components/Layout/Header/Header';
+import { useState } from 'react'
+import { Routes, BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './components/Layout/Header/Header'
 import Hero from './components/Layout/Hero/Hero'
 import Profile from './components/User/Profile/Profile'
 import Dashboard from './components/Admin/Dashboard/Dashboard'
@@ -13,8 +13,11 @@ import EditFaq from './components/Admin/EditFaq/EditFaq'
 import EditCategories from './components/Admin/EditCategories/EditCategories'
 import CourseAnalytics from './components/Admin/Analytics/Course'
 import OrderAnalytics from './components/Admin/Analytics/Order'
-import UserAnalytics from './components/Admin/Analytics/User.js'
-import Courses from './components/Courses/Courses.js'
+import UserAnalytics from './components/Admin/Analytics/User'
+import Courses from './components/Courses/Courses'
+import Course from './components/Course/Course.js'
+import Faq from './components/Faq/Faq.js'
+import Footer from './components/Layout/Footer/Footer.js'
 import './App.css'
 
 function App() {
@@ -29,6 +32,7 @@ function App() {
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/courses' element={<Courses />} />
+        <Route exact path='/course/:id' element={<Course />} />
         <Route exact path='/admin' element={<Dashboard />} />
         <Route exact path='/admin/course' element={<CreateCourse />} />
         <Route exact path='/admin/all-courses' element={<AllCourses />} />
@@ -42,6 +46,7 @@ function App() {
         <Route exact path='/admin/analytics-orders' element={<OrderAnalytics />} />
         <Route exact path='/admin/analytics-users' element={<UserAnalytics />} />
       </Routes >
+      <Footer/>
     </Router >
   );
 }
