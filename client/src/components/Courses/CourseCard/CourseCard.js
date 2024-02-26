@@ -15,7 +15,7 @@ const CourseCard = ({ course, isProfile }) => {
                     {name}
                 </h1>
                 <div>
-                    <Rating value={rating} size={window.innerWidth > 600 ? 'large' : 'medium'} precision={.5} />
+                    <Rating value={rating} size={window.innerWidth > 600 ? 'large' : 'medium'} precision={.5} readOnly />
                     <h5 style={{ display: isProfile ? 'none' : 'inline' }}>
                         {learners} Learners
                     </h5>

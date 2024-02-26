@@ -1,0 +1,205 @@
+.course {
+    width: 90%;
+    margin: auto;
+    padding: 1.25rem auto;
+}
+
+.course>div:first-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.course>div:first-child>div {
+    width: 100%;
+}
+
+.course>div:first-child>div>h1,
+.course>div:first-child>div>div>h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.courseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+}
+
+.courseContainer>div {
+    display: flex;
+    align-items: center;
+}
+
+.courseBenefits {
+    width: 100%;
+    display: flex;
+    padding: 0.5rem initial;
+}
+
+.courseBenefits>div {
+    width: 15px;
+    margin-right: 0.25rem;
+}
+
+.courseBenefits>p {
+    padding-left: 0.5rem;
+}
+
+.courseDetails {
+    font-size: 18px;
+    margin-top: 20px;
+    white-space: pre-line;
+    width: 100%;
+    overflow: hidden;
+}
+
+.courseRating {
+    align-items: center;
+}
+
+.courseRating>div {
+    margin-bottom: 0.5rem;
+}
+
+.courseRating h5 {
+    font-size: 25px;
+}
+
+.courseReview {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.courseReview>div {
+    display: flex;
+}
+
+.courseReview>div>div:first-child {
+    width: 50px;
+    height: 50px;
+    background-color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.courseReview>div>div:first-child>h1 {
+    font-size: 18px;
+}
+
+.courseReview>div>div:nth-child(2) {
+    display: none;
+    padding-left: 0.5rem;
+}
+
+.courseReview>div>div:nth-child(2)>div {
+    display: flex;
+    align-items: center;
+}
+
+.courseReview>div>div:nth-child(2)>div>h5 {
+    font-size: 18px;
+    padding-right: 0.5rem;
+}
+
+.courseReview>div>div:last-child {
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.courseReview>div>div:last-child {
+    font-size: 18px;
+    padding-left: 0.5rem;
+}
+
+.course>div:last-child {
+    width: 100%;
+    position: relative;
+}
+
+.course>div:last-child>div {
+    position: sticky;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+.coursePriceContainer {
+    display: flex;
+    align-items: center;
+}
+
+.coursePriceContainer>h1 {
+    padding-top: 1.25rem;
+    font-size: 25px;
+}
+
+.coursePriceContainer>h5 {
+    padding-left: 0.75rem;
+    font-size: 20px;
+    margin-top: 0.5rem;
+    text-decoration: line-through;
+    opacity: .8;
+}
+
+.coursePriceContainer>h4 {
+    padding-left: 1.25rem;
+    padding-top: 1rem;
+    font-size: 22px;
+}
+
+.courseBtn {
+    width: 180px !important;
+    margin: .75rem initial;
+    cursor: pointer;
+    background-color: #14dc1b !important;
+}
+
+.course>div:last-child {
+    padding-bottom: .5rem;
+}
+
+@media screen and (min-width:800px) {
+    .course>div:first-child {
+        flex-direction: row;
+    }
+
+    .course>div:first-child>div {
+        width: 65%;
+        padding-right: 1.25rem;
+    }
+
+    .courseBenefits {
+        align-items: center;
+    }
+
+    .courseRating {
+        display: flex;
+    }
+
+    .courseRating>div {
+        margin-bottom: unset;
+    }
+
+    .courseReview>div>div:nth-child(2) {
+        display: block;
+    }
+
+    .courseReview>div>div:last-child {
+        display: none;
+    }
+
+    .course>div:last-child {
+        width: 35%;
+    }
+}
