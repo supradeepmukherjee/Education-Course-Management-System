@@ -1,12 +1,67 @@
-.courseContentList{
+.courseContentList {
     margin-top: 15px;
     width: 100%;
 }
-.courseContentListDemo{
+
+.courseContentListDemo {
     margin-left: -30px;
-    min-height: 100vh;
     position: sticky;
     top: 6rem;
     left: 0;
     z-index: 30;
+}
+
+.courseContentListVidSection {
+    border-bottom: 1px solid #ffffff8e;
+    padding-bottom: 0.5rem;
+}
+
+.courseContentListContainer {
+    width: 100%;
+    display: flex;
+}
+
+.courseContentListContainer>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.courseContentListContainer>div>h2 {
+    font-size: 22px;
+}
+
+.courseContentListContainer>div>button {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.courseContentListVideos {
+    width: 100%;
+}
+
+.courseContentListVideo {
+    width: 100%;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+}
+
+.courseContentListVideo>div {
+    display: flex;
+    align-items: flex-start;
+}
+
+.courseContentListVideo h1 {
+    font-size: 18px;
+    display: inline-block;
+    overflow-wrap: break-word;
+}
+.courseContentListVideo h5{
+    padding-left: 2rem;
 }
