@@ -187,8 +187,8 @@ const Course = () => {
                     <div>
                         <div>
                             <Close onClick={() => setOpen(false)} />
-                            
                         </div>
+                        
                     </div>
                 </div>}
         </>
