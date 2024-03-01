@@ -1,0 +1,8 @@
+#button-text{
+    margin-top: 0.5rem;
+    height: 35px !important;
+}
+#payment-message{
+    color: #ff0000;
+    padding-top: 0.5rem;
+}

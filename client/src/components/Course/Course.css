@@ -195,10 +195,14 @@
     -o-border-radius: .75rem;
 }
 
-.courseBuy>div>div {
+.courseBuy>div>div:first-child {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+.courseBuy>div>div:last-child {
+    width: 100%;
 }
 
 @media screen and (min-width:800px) {

@@ -6,6 +6,8 @@ import { format } from 'timeago.js'
 import CoursePlayer from '../Admin/CoursePlayer/CoursePlayer'
 import CourseContentList from './CourseContentList/CourseContentList.js'
 import Close from '@mui/icons-material/CancelOutlined'
+import { Elements } from '@stripe/react-stripe-js'
+import CheckoutForm from './CheckoutForm.js'
 import './Course.css'
 
 const Course = () => {
@@ -188,7 +190,13 @@ const Course = () => {
                         <div>
                             <Close onClick={() => setOpen(false)} />
                         </div>
-                        
+                        <div>
+                            {stripePromise && clientSecret &&
+                                <Elements stripe={stripePromise} options={clientSecret}>
+                                    <CheckoutForm setOpen={setOpen} course={course} />
+                                </Elements>
+                            }
+                        </div>
                     </div>
                 </div>}
         </>
