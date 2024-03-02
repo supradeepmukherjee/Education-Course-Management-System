@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
+import { useNavigate } from 'react-router-dom'
 import './CheckoutForm.css'
 
 const CheckoutForm = ({ setOpen, course }) => {
@@ -7,6 +8,7 @@ const CheckoutForm = ({ setOpen, course }) => {
   const elements = useElements()
   const [msg, setMsg] = useState('')
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
   // use create order action and loadUser action 
   const submitHandler = async e => {
     e.preventDefault()
@@ -25,7 +27,9 @@ const CheckoutForm = ({ setOpen, course }) => {
     }
   }
   useEffect(() => {
-
+    if ('order has been created') {
+      navigate(`/access-course/${course._id}`)
+    }
   }, [])
   return (
     <form id='payment-form' onSubmit={submitHandler}>

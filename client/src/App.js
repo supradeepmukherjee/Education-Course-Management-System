@@ -15,9 +15,10 @@ import CourseAnalytics from './components/Admin/Analytics/Course'
 import OrderAnalytics from './components/Admin/Analytics/Order'
 import UserAnalytics from './components/Admin/Analytics/User'
 import Courses from './components/Courses/Courses'
-import Course from './components/Course/Course.js'
-import Faq from './components/Faq/Faq.js'
-import Footer from './components/Layout/Footer/Footer.js'
+import Course from './components/Course/Course'
+import AccessCourse from './components/Course/AccessCourse/AccessCourse.js'
+import Faq from './components/Faq/Faq'
+import Footer from './components/Layout/Footer/Footer'
 import './App.css'
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/courses' element={<Courses />} />
         <Route exact path='/course/:id' element={<Course />} />
+        <Route exact path='/access-course/:id' element={<AccessCourse />} />
         <Route exact path='/admin' element={<Dashboard />} />
         <Route exact path='/admin/course' element={<CreateCourse />} />
         <Route exact path='/admin/all-courses' element={<AllCourses />} />

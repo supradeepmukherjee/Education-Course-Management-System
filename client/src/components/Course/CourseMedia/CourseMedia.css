@@ -1,0 +1,89 @@
+.courseMedia {
+    width: 95%;
+    padding: 1rem auto;
+    margin: auto;
+}
+
+.courseMediaContainer1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .75rem initial;
+}
+
+.courseMediaContainer1>div {
+    min-height: 40px !important;
+    padding: unset initial !important;
+    width: unset !important;
+}
+
+.courseMediaActive {
+    cursor: no-drop !important;
+    opacity: .8;
+}
+
+.courseMediah1 {
+    padding-top: 0.5rem;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.courseMediaContainer2 {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #64748b33;
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 2px 4px 0 #334155;
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+}
+
+.courseMediah5 {
+    cursor: pointer;
+}
+
+.courseMediah5Active {
+    color: #ef4444;
+}
+
+.courseMediap {
+    font-size: 18px;
+    white-space: pre-line;
+    margin-bottom: 0.75rem;
+}
+
+.courseMediaLinks {
+    margin-bottom: 1.25rem;
+}
+
+.courseMediaLinks>a {
+    display: inline-block;
+    color: #4395c4;
+}
+
+@media screen and (min-width:800px) {
+    .courseMedia {
+        width: 86%;
+    }
+
+    .courseMediah5 {
+        font-size: 20px;
+    }
+
+    .courseMediaLinks>h2 {
+        font-size: 20px;
+        display: inline-block;
+    }
+
+    .courseMediaLinks>a {
+        font-size: 20px;
+        padding-left: 0.5rem;
+    }
+}

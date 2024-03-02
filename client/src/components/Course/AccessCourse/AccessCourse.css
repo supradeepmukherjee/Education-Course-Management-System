@@ -1,0 +1,13 @@
+.accessCourse {
+    width: 100%;
+    display: grid;
+}
+.accessCourse>div{
+    grid-column: span 7;
+}
+
+@media screen and (min-width:800px) {
+    .accessCourse {
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+    }
+}
