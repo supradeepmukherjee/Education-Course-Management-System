@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import CourseMedia from '../CourseMedia/CourseMedia.js'
+import CourseMedia from '../CourseMedia/CourseMedia'
+import CourseContentList from '../CourseContentList/CourseContentList'
 import './AccessCourse.css'
 
 const AccessCourse = () => {
@@ -14,6 +15,9 @@ const AccessCourse = () => {
         <div>
             <div>
                 <CourseMedia data={data} id={id} activeVid={activeVid} setActiveVid={setActiveVid} />
+            </div>
+            <div>
+                <CourseContentList data={data} activeVid={activeVid} setActiveVid={setActiveVid} />
             </div>
         </div>
     )

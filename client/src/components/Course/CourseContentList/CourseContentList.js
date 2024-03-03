@@ -4,7 +4,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore'
 import OndemandVideo from '@mui/icons-material/OndemandVideo'
 import './CourseContentList.css'
 
-const CourseContentList = ({ data, active, setActive, isDemo }) => {
+const CourseContentList = ({ data, activeVid, setActiveVid, isDemo }) => {
     const [visibleSections, setVisibleSections] = useState(new Set())
     const videoSections = [...new Set(data.map(vid => vid.vidSection))] // select unique video sections
     let totalCount = 0 // total videos from prev sections
@@ -54,7 +54,7 @@ const CourseContentList = ({ data, active, setActive, isDemo }) => {
                                     const vidIndex = sectionStartIndex + i
                                     const contentLength = video.vidDuration / 60
                                     return (
-                                        <div className="courseContentListVideo" style={vidIndex === active && { backgroundColor: '#1e293b' }} key={video._id} onClick={() => isDemo ? null : setActive(vidIndex)}>
+                                        <div className="courseContentListVideo" style={vidIndex === activeVid && { backgroundColor: '#1e293b' }} key={video._id} onClick={() => isDemo ? null : setActiveVid(vidIndex)}>
                                             <div>
                                                 <OndemandVideo />
                                                 <h1>
