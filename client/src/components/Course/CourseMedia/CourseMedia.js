@@ -3,6 +3,7 @@ import Left from '@mui/icons-material/ChevronLeft'
 import Right from '@mui/icons-material/ChevronRight'
 import Star from '@mui/icons-material/Star'
 import StarOutline from '@mui/icons-material/StarOutline'
+import CommentReply from '../CommentReply/CommentReply'
 import './CourseMedia.css'
 
 const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
@@ -10,10 +11,18 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
     const [ques, setQues] = useState('')
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
+    const [ans, setAns] = useState('')
+    const [ansId, setAnsId] = useState('')
     const reviewed = course.reviews.find(review => review.user._id === user._id)
-    const qnaHandler = async e => {
-
+    const quesHandler = async e => {
+        if (ques.length === 0) return // error
     }
+    const ansHandler = async e => {
+        if (ques.length === 0) return // error
+    }
+    useEffect(() => {
+
+    }, [])
     return (
         <div className='courseMedia'>
             {/* play the video here */}
@@ -67,7 +76,9 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                         <textarea value={ques} onChange={e => setQues(e.target.value)} cols="30" rows="10" placeholder='Write your Question'></textarea>
                     </div>
                     <div className='courseMediaQna2'>
-                        <div className="submit" onClick={qnaHandler}>
+                        {/* make cursor not allowed when in loading state */}
+                        <div className="submit" onClick={quesHandler}>
+                            {/* loading?null:quesHandler */}
                             Submit
                         </div>
                     </div>
@@ -75,7 +86,7 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                     <br />
                     <div className='br'></div>
                     <div className="">
-
+                        <CommentReply data={data} activeVid={activeVid} ans={ans} setAns={setAns} ansHandler={ansHandler} user={user} setAnsId={setAnsId} />
                     </div>
                 </>}
             {activeBar === 3 &&
@@ -91,9 +102,9 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                                     <div className="courseMediaReviewsRating">
                                         {[1, 2, 3, 4, 5].map(n => {
                                             rating >= i ?
-                                                <Star key={i} onClick={() => setRating(i)} /> // change the color to gold & also customise the size
+                                                <Star key={n} onClick={() => setRating(n)} /> // change the color to gold & also customise the size
                                                 :
-                                                <StarOutline key={i} onClick={() => setRating(i)} /> // change the color to gold & also customise the size
+                                                <StarOutline key={n} onClick={() => setRating(n)} /> // change the color to gold & also customise the size
                                         })}
                                     </div>
                                     <textarea cols="30" rows="10" value={review} onChange={e => setReview(e.target.value)} placeholder='Write your Review here'></textarea>
