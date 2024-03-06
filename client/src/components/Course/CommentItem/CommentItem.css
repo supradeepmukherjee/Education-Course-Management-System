@@ -64,6 +64,40 @@
     -o-border-radius: 99%;
 }
 
+.commentItemReplies>div:nth-child(2) {
+    padding-left: 0.5rem;
+}
+
+.commentItemReplies>div:nth-child(2)>h5 {
+    font-size: 20px;
+}
+
+.commentItemReplies>div:nth-child(2)>small {
+    color: #ffffff83;
+}
+
+.commentItemAns {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.commentItemAns>input {
+    display: block;
+    margin-top: 0.5rem;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid #00000027;
+    padding: 5px;
+    width: 95%;
+}
+
+.commentItemAns>button {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+}
+
 @media screen and (min-width:800px) {
     .commentItemContainer2>span:first-child {
         padding-left: 4rem;
@@ -71,5 +105,9 @@
 
     .commentItemReplies {
         margin-left: 4rem;
+    }
+
+    .commentItemAns>input {
+        margin-left: 3rem;
     }
 }

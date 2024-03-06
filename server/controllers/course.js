@@ -3,6 +3,7 @@ import { Course } from '../models/Course.js'
 import { Comment } from '../models/Comment.js'
 import { CourseData } from '../models/CourseData.js'
 import { Review } from '../models/Review.js'
+import { Notification } from '../models/Notification'
 
 export const createCourse = async (req, res) => {
     try {
@@ -110,6 +111,11 @@ export const review = async (req, res) => {
         courseReviews.forEach(review => total += review.rating)
         course.rating = total / courseReviews.length
         await course.save()
+        await Notification.create({
+            title: 'New Review',
+            msg: `${req.user.name} has reviewed ${req.body.name}`,
+            user: req.user._id
+        })
         res.status(200).json({ success: true, review })
     } catch (err) {
         console.log(err);

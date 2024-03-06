@@ -74,7 +74,8 @@
 }
 
 .courseMediaQna>img,
-.courseMediaReviewsContainer>img {
+.courseMediaReviewsContainer>img,
+.courseMediaReviewsItem>div>div:first-child>img {
     width: 50px;
     height: 50px;
     object-fit: cover;
@@ -171,6 +172,40 @@
     font-size: 18px;
     margin-top: 1.25rem;
     margin-right: 0.5rem;
+}
+
+.courseMediaReviewsList {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff3b;
+}
+
+.courseMediaReviewsList>div {
+    width: 100%;
+}
+
+.courseMediaReviewsItem {
+    width: 100%;
+    margin: 1.25rem initial;
+}
+
+.courseMediaReviewsItem>div {
+    width: 100%;
+    display: flex;
+}
+
+.courseMediaReviewsItem>div>div:first-child {}
+
+.courseMediaReviewsItem>div>div:last-child {
+    margin-left: 0.5rem;
+}
+
+.courseMediaReviewsItem>div>div:last-child>h1 {
+    font-size: 18px;
+}
+
+.courseMediaReviewsItem>div>div:last-child>small {
+    color: #ffffff83;
 }
 
 @media screen and (min-width:800px) {

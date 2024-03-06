@@ -4,6 +4,8 @@ import Right from '@mui/icons-material/ChevronRight'
 import Star from '@mui/icons-material/Star'
 import StarOutline from '@mui/icons-material/StarOutline'
 import CommentReply from '../CommentReply/CommentReply'
+import { Rating } from '@mui/material'
+import { format } from 'timeago.js'
 import './CourseMedia.css'
 
 const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
@@ -12,13 +14,16 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [ans, setAns] = useState('')
-    const [ansId, setAnsId] = useState('')
+    const [quesId, setQuesId] = useState('')
     const reviewed = course.reviews.find(review => review.user._id === user._id)
     const quesHandler = async e => {
         if (ques.length === 0) return // error
     }
     const ansHandler = async e => {
         if (ques.length === 0) return // error
+    }
+    const reviewHandler = async e => {
+
     }
     useEffect(() => {
 
@@ -86,7 +91,7 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                     <br />
                     <div className='br'></div>
                     <div className="">
-                        <CommentReply data={data} activeVid={activeVid} ans={ans} setAns={setAns} ansHandler={ansHandler} user={user} setAnsId={setAnsId} />
+                        <CommentReply data={data} activeVid={activeVid} ans={ans} setAns={setAns} ansHandler={ansHandler} user={user} setQuesId={setQuesId} />
                     </div>
                 </>}
             {activeBar === 3 &&
@@ -97,7 +102,7 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                                 <img src={"user.chavi"} alt="" />
                                 <div>
                                     <h5>
-                                        Rate Us <span ></span>
+                                        Rate Us <span>+red</span>
                                     </h5>
                                     <div className="courseMediaReviewsRating">
                                         {[1, 2, 3, 4, 5].map(n => {
@@ -111,12 +116,40 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                                 </div>
                             </div>
                             <div className="courseMediaReviewsSubmit">
-                                <div className="submit">
+                                <div className="submit" onClick={reviewHandler}>
                                     Submit
                                 </div>
                             </div>
                         </>
                     }
+                    <br />
+                    <div className='br'></div>
+                    <div className="courseMediaReviewsList">
+                        <div>
+                            {[...course.reviews].reverse().map(review => {
+                                <div className="courseMediaReviewsItem">
+                                    <div>
+                                        <div>
+                                            <img src={review.chavi.url} alt="" />
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                {review.user.name}
+                                            </h1>
+                                            <Rating value={review.rating} size={window.innerWidth > 600 ? 'large' : 'medium'} precision={.5} readOnly />
+                                            <p>
+                                                {review.comment}
+                                            </p>
+                                            <small>
+                                                {format(review.createdAt)}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            })}
+                        </div>
+                    </div>
+                    
                 </div>
             }
         </div>

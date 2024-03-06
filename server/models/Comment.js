@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    commentReplies: [String]
+    commentReplies: [String] // create an object which has user and comment value
 },
     { timestamps: true }
 )
