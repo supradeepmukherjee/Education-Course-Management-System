@@ -15,6 +15,7 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
     const [review, setReview] = useState('')
     const [ans, setAns] = useState('')
     const [quesId, setQuesId] = useState('')
+    const [isReviewReply, setIsReviewReply] = useState(false)
     const reviewed = course.reviews.find(review => review.user._id === user._id)
     const quesHandler = async e => {
         if (ques.length === 0) return // error
@@ -125,31 +126,33 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                     <br />
                     <div className='br'></div>
                     <div className="courseMediaReviewsList">
-                        <div>
-                            {[...course.reviews].reverse().map(review => {
-                                <div className="courseMediaReviewsItem">
+                        {[...course.reviews].reverse().map(review => {
+                            <div className="courseMediaReviewsItem">
+                                <div>
                                     <div>
-                                        <div>
-                                            <img src={review.chavi.url} alt="" />
-                                        </div>
-                                        <div>
-                                            <h1>
-                                                {review.user.name}
-                                            </h1>
-                                            <Rating value={review.rating} size={window.innerWidth > 600 ? 'large' : 'medium'} precision={.5} readOnly />
-                                            <p>
-                                                {review.comment}
-                                            </p>
-                                            <small>
-                                                {format(review.createdAt)}
-                                            </small>
-                                        </div>
+                                        <img src={review.chavi.url} alt="" />
+                                    </div>
+                                    <div>
+                                        <h1>
+                                            {review.user.name}
+                                        </h1>
+                                        <Rating value={review.rating} size={window.innerWidth > 600 ? 'large' : 'medium'} precision={.5} readOnly />
+                                        <p>
+                                            {review.comment}
+                                        </p>
+                                        <small>
+                                            {format(review.createdAt)}
+                                        </small>
                                     </div>
                                 </div>
-                            })}
-                        </div>
+                                {user.role === 'Admin' &&
+                                    <span onClick={() => setIsReviewReply(true)}>
+                                        Add Reply
+                                    </span>}
+                            </div>
+                        })}
                     </div>
-                    
+                    {isReviewReply && <input type="text" className='input' />}
                 </div>
             }
         </div>
