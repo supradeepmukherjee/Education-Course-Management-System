@@ -79,20 +79,17 @@
 .courseReview>div>div:first-child {
     width: 50px;
     height: 50px;
-    background-color: #475569;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
 }
 
-.courseReview>div>div:first-child>h1 {
-    font-size: 18px;
+.courseReview>div>div:first-child>img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 99%;
+    -webkit-border-radius: 99%;
+    -moz-border-radius: 99%;
+    -ms-border-radius: 99%;
+    -o-border-radius: 99%;
 }
 
 .courseReview>div>div:nth-child(2) {

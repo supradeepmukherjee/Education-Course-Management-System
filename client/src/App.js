@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom'
+import Courses from './components/Course/Courses/Courses'
 import Header from './components/Layout/Header/Header'
 import Hero from './components/Layout/Hero/Hero'
 import Profile from './components/User/Profile/Profile'
@@ -14,7 +15,7 @@ import EditCategories from './components/Admin/EditCategories/EditCategories'
 import CourseAnalytics from './components/Admin/Analytics/Course'
 import OrderAnalytics from './components/Admin/Analytics/Order'
 import UserAnalytics from './components/Admin/Analytics/User'
-import Courses from './components/Courses/Courses'
+import ViewCourses from './components/Course/ViewCourses/ViewCourses'
 import Course from './components/Course/Course'
 import AccessCourse from './components/Course/AccessCourse/AccessCourse.js'
 import Faq from './components/Faq/Faq'
@@ -33,6 +34,7 @@ function App() {
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/courses' element={<Courses />} />
+        <Route exact path='/view-courses' element={<ViewCourses />} />
         <Route exact path='/course/:id' element={<Course />} />
         <Route exact path='/access-course/:id' element={<AccessCourse />} />
         <Route exact path='/admin' element={<Dashboard />} />

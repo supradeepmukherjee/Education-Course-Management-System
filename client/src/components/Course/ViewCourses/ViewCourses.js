@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import CourseCard from './CourseCard/CourseCard.js'
-import './Courses.css'
+import CourseCard from '../CourseCard/CourseCard.js'
+import './ViewCourses.css'
 
-const Courses = () => {
+const ViewCourses = () => {
   const [courses, setCourses] = useState([])
   useEffect(() => {
-    //   setCourses(9min)
+    //   setCourses()
   }, [])
   return (
-    <div className='courses'>
+    <div className='viewCourses'>
       <h1>
         Grow your career Opportunities
         <br />
@@ -16,11 +16,11 @@ const Courses = () => {
       </h1>
       <br />
       <br />
-      <div className="coursesGrid">
+      <div className="viewCoursesGrid">
         {courses.map(course => <CourseCard key={course._id} course={course} />)}
       </div>
     </div>
   )
 }
 
-export default Courses
+export default ViewCourses

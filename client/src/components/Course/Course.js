@@ -112,11 +112,8 @@ const Course = () => {
                                 {[...reviews].reverse().map(review => {
                                     <div className="courseReview" key={review._id}>
                                         <div>
-                                            {/* try to put this flexbox with the parent container &check if it works */}
                                             <div>
-                                                <h1>
-                                                    {review.user.name.slice(0)}
-                                                </h1>
+                                                <img src="review.user.chavi.url" alt="" />
                                             </div>
                                             <div>
                                                 <div>
@@ -139,6 +136,24 @@ const Course = () => {
                                                 <Rating value={rating} size={window.innerWidth > 600 ? 'large' : 'medium'} precision={.5} readOnly />
                                             </div>
                                         </div>
+                                        {// only show this if any acknowledgement
+                                            <div className="courseMediaReviewAck">
+                                                <div>
+                                                    <img src="adminRole" alt="" />
+                                                    {/* also put a verified badge using flex */}
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        {/* admin name */}
+                                                    </h5>
+                                                    <p>
+                                                        {/* admin comment */}
+                                                    </p>
+                                                    <small>
+                                                        {/* comment time */}
+                                                    </small>
+                                                </div>
+                                            </div>}
                                     </div>
                                 })}
                             </div>

@@ -1,11 +1,16 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import heroImg from '../../../img/hero.png'
 import './Hero.css'
 
 const Hero = () => {
     // show hero img,banner dynamically
-    const [input, setInput] = useState('')
+    const [search, setSearch] = useState('')
+    const navigate = useNavigate()
+    const searchHandler = async e => {
+        if (search === '') return
+        navigate(`/courses?name=${search}`)
+    }
     return (
         <div className='hero'>
             <div></div>
@@ -26,8 +31,8 @@ const Hero = () => {
                 <br />
                 <div className="">
                     <input type="text" className='heroInput'
-                        value={input} onChange={e => setInput(e.target.value)} />
-                    <div className="heroInputIcon">
+                        value={search} onChange={e => setSearch(e.target.value)} />
+                    <div className="heroInputIcon" onClick={searchHandler}>
                         {/* search icon */}
                     </div>
                 </div>
@@ -36,7 +41,7 @@ const Hero = () => {
                 <div className="belowHeroInput">
                     <p>
                         6,00,000+ students already trusted us
-                        <Link to={'/courses'} style={{ color: '#dc143c' }}>
+                        <Link to={'/view-courses'} style={{ color: '#dc143c' }}>
                             View Courses
                         </Link>
                     </p>

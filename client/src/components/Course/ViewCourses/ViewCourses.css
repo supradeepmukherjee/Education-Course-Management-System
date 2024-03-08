@@ -1,9 +1,9 @@
-.courses {
+.viewCourses {
     width: 90%;
     margin: auto;
 }
 
-.courses>h1 {
+.viewCourses>h1 {
     text-align: center;
     font-size: 25px;
     line-height: 35px;
@@ -11,7 +11,7 @@
     letter-spacing: -.025em;
 }
 
-.coursesGrid {
+.viewCoursesGrid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 20px;
@@ -19,43 +19,43 @@
 }
 
 @media screen and (min-width:640px) {
-    .courses>h1 {
+    .viewCourses>h1 {
         font-size: 1.875rem;
         line-height: 2.25rem;
     }
 }
 
 @media screen and (min-width:768px) {
-    .coursesGrid {
+    .viewCoursesGrid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 25px;
     }
 }
 
 @media screen and (min-width:800px) {
-    .courses {
+    .viewCourses {
         width: 80%;
     }
 
-    .courses>h1 {
+    .viewCourses>h1 {
         line-height: 60px !important;
     }
 }
 
 @media screen and (min-width:1024px) {
-    .courses>h1 {
+    .viewCourses>h1 {
         font-size: 2.25rem;
         line-height: 2.5rem;
     }
 
-    .coursesGrid {
+    .viewCoursesGrid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 25px;
     }
 }
 
 @media screen and (min-width:1500px) {
-    .coursesGrid {
+    .viewCoursesGrid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 35px;
     }

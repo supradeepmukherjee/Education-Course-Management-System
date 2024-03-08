@@ -75,7 +75,8 @@
 
 .courseMediaQna>img,
 .courseMediaReviewsContainer>img,
-.courseMediaReviewsItem>div>div:first-child>img {
+.courseMediaReviewsItem>div>div:first-child>img,
+.courseMediaReviewAck img {
     width: 50px;
     height: 50px;
     object-fit: cover;
@@ -202,8 +203,48 @@
 
 .courseMediaReviewsItem span {
     display: block;
-    padding-left: 2.5rem !important;
+    margin-left: 2.5rem !important;
     cursor: pointer;
+}
+
+.courseMediaReviewReply {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.courseMediaReviewReply>input {
+    display: block;
+    margin-top: 0.5rem;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    width: 95%;
+}
+
+.courseMediaReviewReply>button {
+    position: absolute;
+    right: 0;
+    bottom: 0.25rem;
+}
+
+.courseMediaReviewAck {
+    width: 100%;
+    display: flex;
+    margin: 1.25rem initial;
+}
+
+.courseMediaReviewAck>div:last-child {
+    padding-left: 0.5rem;
+}
+
+.courseMediaReviewAck h5 {
+    font-size: 20px;
+}
+
+.courseMediaReviewAck small {
+    color: #ffffff83;
 }
 
 @media screen and (min-width:800px) {
@@ -237,5 +278,13 @@
 
     .courseMediaReviewsSubmit>div {
         margin-right: 0;
+    }
+
+    .courseMediaReviewReply>input {
+        margin-left: 3rem;
+    }
+
+    .courseMediaReviewAck {
+        margin-left: 4rem;
     }
 }

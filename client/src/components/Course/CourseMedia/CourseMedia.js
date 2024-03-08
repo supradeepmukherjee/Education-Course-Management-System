@@ -16,6 +16,8 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
     const [ans, setAns] = useState('')
     const [quesId, setQuesId] = useState('')
     const [isReviewReply, setIsReviewReply] = useState(false)
+    const [reply, setReply] = useState('')
+    const [reviewId, setReviewId] = useState('')
     const reviewed = course.reviews.find(review => review.user._id === user._id)
     const quesHandler = async e => {
         if (ques.length === 0) return // error
@@ -24,6 +26,9 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
         if (ques.length === 0) return // error
     }
     const reviewHandler = async e => {
+
+    }
+    const reviewReplyHandler = async e => {
 
     }
     useEffect(() => {
@@ -145,14 +150,41 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                                         </small>
                                     </div>
                                 </div>
-                                {user.role === 'Admin' &&
-                                    <span onClick={() => setIsReviewReply(true)}>
+                                {user.role === 'Admin' && // also don't show this if it has already been acknowledged
+                                    <span onClick={() => {
+                                        setIsReviewReply(true)
+                                        setReviewId(review._id)
+                                    }}>
                                         Add Reply
                                     </span>}
+                                {isReviewReply &&
+                                    <div className="courseMediaReviewReply">
+                                        <input type="text" placeholder='Enter your Reply' value={reply} onChange={e => setReply(e.target.value)} />
+                                        <button type="submit" disabled={false}  >
+                                            Submit
+                                        </button>
+                                    </div>}
+                                {// only show this if any acknowledgement
+                                    <div className="courseMediaReviewAck">
+                                        <div>
+                                            <img src="adminRole" alt="" />
+                                            {/* also put a verified badge using flex */}
+                                        </div>
+                                        <div>
+                                            <h5>
+                                                {/* admin name */}
+                                            </h5>
+                                            <p>
+                                                {/* admin comment */}
+                                            </p>
+                                            <small>
+                                                {/* comment time */}
+                                            </small>
+                                        </div>
+                                    </div>}
                             </div>
                         })}
                     </div>
-                    {isReviewReply && <input type="text" className='input' />}
                 </div>
             }
         </div>
