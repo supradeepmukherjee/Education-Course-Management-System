@@ -1,4 +1,3 @@
-import { } from 'react'
 import ReviewCard from './ReviewCard/ReviewCard.js'
 import './Reviews.css'
 

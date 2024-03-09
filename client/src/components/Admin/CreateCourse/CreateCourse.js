@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Header from '../Header/Header'
 import Sidebar from '../Sidebar/Sidebar'
 import CourseInfo from '../CourseInfo/CourseInfo'

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useNavigate } from 'react-router-dom'
 import './CheckoutForm.css'
@@ -30,7 +30,7 @@ const CheckoutForm = ({ setOpen, course }) => {
     if ('order has been created') {
       navigate(`/access-course/${course._id}`)
     }
-  }, [])
+  }, [course._id, navigate])
   return (
     <form id='payment-form' onSubmit={submitHandler}>
       <LinkAuthenticationElement id='link-authentication-element' />

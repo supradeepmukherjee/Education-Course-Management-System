@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Rating from '@mui/material/Rating'
 import CheckCircle from '@mui/icons-material/CheckCircle'
@@ -10,17 +10,24 @@ import { Elements } from '@stripe/react-stripe-js'
 import CheckoutForm from './CheckoutForm/CheckoutForm.js'
 import './Course.css'
 
-const Course = () => {
-    const [route, setRoute] = useState('Login')
-    const [open, setOpen] = useState(false)
+const Course = ({ setOpen: openAuthModal, setRoute }) => {
     const { id } = useParams()
+    const [open, setOpen] = useState(false)
+    const [user, setUser] = useState(null)
     // for seo put title 'coursename - ECMS'; in tags, use the tags of the courses(so change it from array to string) and description of your choice(using ai) 
     const { price, discount, _id, name, rating, reviews, learners, benefits, prerequisites, desc } = course
     const finalPrice = price - discount
     const isPurchased = user.courses.find(c => c._id === _id)
     const buyHandler = async e => {
-        setOpen(true)
+        if (user) setOpen(true)
+        else {
+            setRoute('Login')
+            openAuthModal(true)
+        }
     }
+    useEffect(() => {
+        setUser(data.user)
+    }, [data])
     return (
         <>
             <div className='course'>

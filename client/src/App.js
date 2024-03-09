@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom'
 import Courses from './components/Course/Courses/Courses'
 import Header from './components/Layout/Header/Header'
@@ -20,13 +20,18 @@ import Course from './components/Course/Course'
 import AccessCourse from './components/Course/AccessCourse/AccessCourse.js'
 import Faq from './components/Faq/Faq'
 import Footer from './components/Layout/Footer/Footer'
+import io from 'socket.io-client'
 import './App.css'
+const socket = io('/')
 
 function App() {
   const [open, setOpen] = useState(true)
   const [active, setActive] = useState(0)
   const [route, setRoute] = useState('Login')
   const [dashboard, setDashboard] = useState(false)
+  useEffect(() => {
+    socket.on('connected', () => { })
+  }, [])
   return (
     <Router>
       {!dashboard && <Header open={open} setOpen={setOpen} active={active} setActive={setActive} setRoute={setRoute} route={route} />}
@@ -35,7 +40,7 @@ function App() {
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/courses' element={<Courses />} />
         <Route exact path='/view-courses' element={<ViewCourses />} />
-        <Route exact path='/course/:id' element={<Course />} />
+        <Route exact path='/course/:id' element={<Course setOpen={setOpen} setRoute={setRoute} />} />
         <Route exact path='/access-course/:id' element={<AccessCourse />} />
         <Route exact path='/admin' element={<Dashboard />} />
         <Route exact path='/admin/course' element={<CreateCourse />} />
@@ -50,7 +55,7 @@ function App() {
         <Route exact path='/admin/analytics-orders' element={<OrderAnalytics />} />
         <Route exact path='/admin/analytics-users' element={<UserAnalytics />} />
       </Routes >
-      <Footer/>
+      <Footer />
     </Router >
   );
 }

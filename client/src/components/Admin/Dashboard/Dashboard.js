@@ -9,7 +9,7 @@ import CircularProgress from './CircularProgressComponent'
 import Invoices from './Invoices.js'
 import './Dashboard.css'
 
-const Dashboard = () => {
+const Dashboard = ({ isDashboard }) => {
   const [open, setOpen] = useState(false)
   return (
     <div className='dashboard'>

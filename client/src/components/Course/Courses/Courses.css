@@ -1,0 +1,41 @@
+.courses {
+    width: 95%;
+    margin: auto;
+    min-height: 70vh;
+}
+
+.courses>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.courses>div>div {
+    height: 35px;
+    margin: 0.75rem;
+    padding: initial .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.courses>p {
+    display: block;
+    justify-content: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width:800px) {
+    .courses {
+        width: 85%;
+    }
+}

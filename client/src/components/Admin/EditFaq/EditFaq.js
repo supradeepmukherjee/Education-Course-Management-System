@@ -4,19 +4,23 @@ import Add from '@mui/icons-material/AddCircleOutline'
 import Delete from '@mui/icons-material/Delete'
 import AddFaq from '@mui/icons-material/PlaylistAdd'
 import './EditFaq.css'
+import Sidebar from "../Sidebar/Sidebar"
+import Header from "../Header/Header"
 
 const EditFaq = () => {
     const [faqs, setFaqs] = useState([])
     const toggleFaq = id => {
         setFaqs(origFaq.map(q => {
-            q._id === id ? { ...q, active: !q.active } : q
+            return (q._id === id ? { ...q, active: !q.active } : q)
+            
         }))
     }
     const changeHandler = (id, val, qa) => {
         setFaqs(origFaq.map(q => {
-            q._id === id ?
+            return (q._id === id ?
                 (qa === 'q' ? { ...q, ques: val } : { ...q, ans: val })
                 : q
+            )
         }))
     }
     const newFaq = () => {
@@ -31,7 +35,7 @@ const EditFaq = () => {
     const changed = (origFaq, faqs) => origFaq !== faqs
     const notEmpty = faqs => !(faqs.some(q => q.ques === '' || q.ans === ''))
     const submitHandler = () => {
-        
+
     }
     return (
         <div className='dashboard'>
