@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom'
 import Courses from './components/Course/Courses/Courses'
 import Header from './components/Layout/Header/Header'
@@ -20,18 +20,13 @@ import Course from './components/Course/Course'
 import AccessCourse from './components/Course/AccessCourse/AccessCourse.js'
 import Faq from './components/Faq/Faq'
 import Footer from './components/Layout/Footer/Footer'
-import io from 'socket.io-client'
 import './App.css'
-const socket = io('/')
 
 function App() {
   const [open, setOpen] = useState(true)
   const [active, setActive] = useState(0)
   const [route, setRoute] = useState('Login')
   const [dashboard, setDashboard] = useState(false)
-  useEffect(() => {
-    socket.on('connected', () => { })
-  }, [])
   return (
     <Router>
       {!dashboard && <Header open={open} setOpen={setOpen} active={active} setActive={setActive} setRoute={setRoute} route={route} />}

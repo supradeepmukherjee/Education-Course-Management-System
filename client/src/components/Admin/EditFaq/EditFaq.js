@@ -12,7 +12,6 @@ const EditFaq = () => {
     const toggleFaq = id => {
         setFaqs(origFaq.map(q => {
             return (q._id === id ? { ...q, active: !q.active } : q)
-            
         }))
     }
     const changeHandler = (id, val, qa) => {

@@ -215,7 +215,7 @@ const Course = ({ setOpen: openAuthModal, setRoute }) => {
                         <div>
                             {stripePromise && clientSecret &&
                                 <Elements stripe={stripePromise} options={clientSecret}>
-                                    <CheckoutForm setOpen={setOpen} course={course} />
+                                    <CheckoutForm setOpen={setOpen} course={course} user={user} />
                                 </Elements>
                             }
                         </div>

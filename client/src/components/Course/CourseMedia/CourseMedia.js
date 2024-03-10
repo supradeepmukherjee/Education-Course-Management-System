@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Left from '@mui/icons-material/ChevronLeft'
 import Right from '@mui/icons-material/ChevronRight'
 import Star from '@mui/icons-material/Star'
@@ -7,6 +7,8 @@ import CommentReply from '../CommentReply/CommentReply'
 import { Rating } from '@mui/material'
 import { format } from 'timeago.js'
 import './CourseMedia.css'
+import io from 'socket.io-client'
+const socket = io('/')
 
 const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
     const [activeBar, setActiveBar] = useState(0)
@@ -32,8 +34,30 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
 
     }
     useEffect(() => {
-
-    }, [])
+        if (quesSuccess) {
+            socket.emit('notification', {
+                title: 'New Question',
+                msg: `New question asked in ${data[activeVid].title}`,
+                user: user._id
+            })
+        }
+        if (ansSuccess) {
+            if (user.role !== 'admin') {
+                socket.emit('notification', {
+                    title: 'New Reply',
+                    msg: `New Reply to your question in ${data[activeVid].title}`,
+                    user: user._id
+                })
+            }
+        }
+        if (revSuccess) {
+            socket.emit('notification', {
+                title: 'New Review',
+                msg: `A User reviewed: ${course.name}`,
+                user: user._id
+            })
+        }
+    }, [activeVid, data])
     return (
         <div className='courseMedia'>
             {/* play the video here */}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useNavigate } from 'react-router-dom'
+import io from 'socket.io-client'
+import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import './CheckoutForm.css'
 
-const CheckoutForm = ({ setOpen, course }) => {
+const socket = io('/')
+const CheckoutForm = ({ setOpen, course, user }) => {
   const stripe = useStripe()
   const elements = useElements()
   const [msg, setMsg] = useState('')
@@ -28,9 +30,14 @@ const CheckoutForm = ({ setOpen, course }) => {
   }
   useEffect(() => {
     if ('order has been created') {
+      socket.emit('notification', {
+        title: 'New Order',
+        msg: `${user.name} has bought course: ${course.name}`,
+        user: user._id
+      })
       navigate(`/access-course/${course._id}`)
     }
-  }, [course._id, navigate])
+  }, [course._id, course.name, navigate, user._id, user.name])
   return (
     <form id='payment-form' onSubmit={submitHandler}>
       <LinkAuthenticationElement id='link-authentication-element' />
