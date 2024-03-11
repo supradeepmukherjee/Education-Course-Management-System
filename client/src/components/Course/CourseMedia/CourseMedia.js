@@ -181,7 +181,7 @@ const CourseMedia = ({ data, id, activeVid, setActiveVid }) => {
                                     }}>
                                         Add Reply
                                     </span>}
-                                {isReviewReply &&
+                                {isReviewReply && // also allow the admin to reply to only 1 review at single point in time
                                     <div className="courseMediaReviewReply">
                                         <input type="text" placeholder='Enter your Reply' value={reply} onChange={e => setReply(e.target.value)} />
                                         <button type="submit" disabled={false}  >

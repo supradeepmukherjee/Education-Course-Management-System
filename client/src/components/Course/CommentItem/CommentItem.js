@@ -32,26 +32,28 @@ const CommentItem = ({ setQuesId, ques, ans, setAns, ansHandler }) => {
                     {ques.commentReplies.length}
                 </span>
             </div>
-            {replyActive &&
+            {replyActive && // also allow the admin to reply to only 1 review at single point in time
                 <>
                     {ques.commentReplies.map(reply => {
-                        <div className="commentItemReplies">
-                            <div>
-                                <img src={reply.user.chavi} alt="" />
+                        return (
+                            <div className="commentItemReplies">
+                                <div>
+                                    <img src={reply.user.chavi} alt="" />
+                                </div>
+                                <div>
+                                    <h5>
+                                        {reply.user.name}
+                                        {/* also put a verified badge if the user is admin using flex */}
+                                    </h5>
+                                    <p>
+                                        {reply.answer}
+                                    </p>
+                                    <small>
+                                        {format(reply.createdAt)}
+                                    </small>
+                                </div>
                             </div>
-                            <div>
-                                <h5>
-                                    {reply.user.name}
-                                    {/* also put a verified badge if the user is admin using flex */}
-                                </h5>
-                                <p>
-                                    {reply.answer}
-                                </p>
-                                <small>
-                                    {format(reply.createdAt)}
-                                </small>
-                            </div>
-                        </div>
+                            )
                     })}
                     <>
                         <div className='commentItemAns'>

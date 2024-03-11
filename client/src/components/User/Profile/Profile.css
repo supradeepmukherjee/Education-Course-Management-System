@@ -34,8 +34,43 @@
     margin-top: 80px;
 }
 
+.profileContainer3 {
+    width: 100%;
+    padding: initial .5rem;
+    padding-left: 1.75rem;
+}
+
+.profileContainer3>div {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 20px;
+}
+.profileContainer3>h1{
+    text-align: center;
+    font-size: 18px;
+}
+
+@media screen and (min-width:768px) {
+    .profileContainer3>div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+}
+
 @media screen and (min-width:800px) {
     .profileContainer {
         width: 310px;
+    }
+
+    .profileContainer3 {
+        padding: initial 2.5rem;
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .profileContainer3>div {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 35px;
     }
 }

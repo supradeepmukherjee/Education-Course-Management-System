@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom'
 import Courses from './components/Course/Courses/Courses'
+import About from './components/About/About'
+import Faq from './components/Faq/Faq'
+import TnC from './components/TnC/TnC'
 import Header from './components/Layout/Header/Header'
 import Hero from './components/Layout/Hero/Hero'
 import Profile from './components/User/Profile/Profile'
@@ -18,7 +21,6 @@ import UserAnalytics from './components/Admin/Analytics/User'
 import ViewCourses from './components/Course/ViewCourses/ViewCourses'
 import Course from './components/Course/Course'
 import AccessCourse from './components/Course/AccessCourse/AccessCourse.js'
-import Faq from './components/Faq/Faq'
 import Footer from './components/Layout/Footer/Footer'
 import './App.css'
 
@@ -34,6 +36,9 @@ function App() {
         <Route exact path='/' element={<Hero />} />
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/courses' element={<Courses />} />
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/faq' element={<Faq />} />
+        <Route exact path='/tnc' element={<TnC />} />
         <Route exact path='/view-courses' element={<ViewCourses />} />
         <Route exact path='/course/:id' element={<Course setOpen={setOpen} setRoute={setRoute} />} />
         <Route exact path='/access-course/:id' element={<AccessCourse />} />

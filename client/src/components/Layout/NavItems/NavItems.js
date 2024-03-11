@@ -17,12 +17,12 @@ const NavItems = ({ active, isPhone }) => {
             url: '/about'
         },
         {
-            name: 'Policy',
-            url: '/policy'
-        },
-        {
             name: 'FAQ',
             url: '/faq'
+        },
+        {
+            name: 'T&C',
+            url: '/tnc'
         },
     ]
     return (
